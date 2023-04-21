@@ -1,0 +1,131 @@
+# ZSH User
+
+# Custom completions
+
+fpath=($HOME/.completions.d $HOME/.zsh-completions.git/src $fpath)
+
+# Debug
+
+zmodload zsh/zprof
+
+# History
+
+unsetopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+
+# Aliases and functions
+
+## Editor
+
+export NVIM_APPNAME="nvim-astro"
+
+alias e='nvim'
+alias et='nvim +":Neotree"'
+alias es='nvim +":Neotree show" +":SessionManager load_current_dir_session"'
+alias ve='neovide'
+alias hx="hexyl"
+alias hex="hexyl"
+
+alias nvim-astro="NVIM_APPNAME=nvim-astro nvim"
+alias nvim-chad="NVIM_APPNAME=nvim-chad nvim"
+alias nvim-lazy="NVIM_APPNAME=nvim-lazy nvim"
+alias nvim-test="NVIM_APPNAME=nvim-test nvim"
+
+function nvims() {
+  items=("default" "nvim-lazy" "nvim-astro" "nvim-chad" "nvim-test")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  elif [[ $config == "Test" ]]; then
+    config="VimTest"
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
+
+## Yadm
+
+alias y="yadm"
+alias ya="yadm add"
+alias yc="yadm status -s"
+alias yu="yadm status -s -u"
+
+## Zellij
+
+alias z="zellij"
+alias za="zellij attach -c"
+alias zp="zellij -l _personal -s personal 2>/dev/null || zellij attach personal"
+alias zw="zellij -l _work -s work 2>/dev/null || zellij attach work"
+alias zc="zellij -l _config -s config 2>/dev/null || zellij attach config"
+alias zs="zellij list-sessions"
+alias zt="zellij action new-tab"
+
+## DevOps
+
+alias a="ansible"
+alias ap="ansible-playbook"
+alias ansible-vault="ANSIBLE_VERBOSITY=0 ansible-vault"
+alias aw="aws"
+alias j="just"
+alias tg="terragrunt"
+
+## System
+
+alias de="direnv"
+alias vg="lazygit"
+
+## AI
+
+function fai () {
+  export OPENAI_API_KEY=$(op item get "OpenAI API Key" --fields label="api key")
+}
+
+## Env
+
+function e1p () {
+  cmd='op read "op://private/ZSH ENV/env"'
+  cfg=$(eval $cmd)
+  for i in $cfg; do
+    echo export $i;
+  done > $HOME/.zshenv_private
+}
+if [[ ! -f $HOME/.zshenv_private ]]; then
+  e1p
+  source $HOME/.zshenv_private
+fi
+
+## ls aliases
+
+alias ls='exa --group-directories-first'
+alias ll='ls -l --git'        # Long format, git status
+alias l='ll -a'               # Long format, all files
+alias lr='ll -T'              # Long format, recursive as a tree
+alias lx='ll -sextension'     # Long format, sort by extension
+alias lk='ll -ssize'          # Long format, largest file size last
+alias lt='ll -smodified'      # Long format, newest modification time last
+alias lc='ll -schanged'       # Long format, newest status change (ctime) last
+
+# Network aliases
+alias wifi="nmtui"
+
+
+# functions
+
+function zr () { zellij run --name "$*" --close-on-exit -- zsh -ic "$*";}
+function zrd () { zellij run --name "$*" --direction "Down" --close-on-exit -- zsh -ic "$*";}
+function zrf () { zellij run --name "$*" --floating --close-on-exit -- zsh -ic "$*";}
+function ze () { zellij edit "$*";}
+function zed () { zellij edit --direction "Down" "$*";}
+function zef () { zellij edit --floating "$*";}
+function zl () {
+  ZJ_LAYOUT="$(ls -1 $HOME/.config/zellij/layouts | sed 's/.kdl//g' | grep -vE '(^_)|(\.swap$)' | sk)"
+  zellij action new-tab --layout $ZJ_LAYOUT
+}
+
+# Extra
+
+eval "$(rtx activate zsh)"
+eval "$(zoxide init --cmd c zsh)"
+
