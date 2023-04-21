@@ -1,0 +1,51 @@
+[includeIf "gitdir:~/git/"]
+    path = ~/.gitconfig_personal
+[includeIf "gitdir:~/temp/"]
+    path = ~/.gitconfig_personal
+[includeIf "gitdir:~/work/"]
+    path = ~/.gitconfig_work
+[includeIf "gitdir:~/.local/share/yadm/repo.git"]
+    path = ~/.gitconfig_personal
+[alias]
+    co = checkout
+    br = branch
+    ci = commit -v
+    st = status
+    pl = pull
+    pu = push
+    unstage = reset HEAD --
+    last = log -1 HEAD
+[core]
+    autocrlf = input
+    editor = nvim
+    pager = delta
+    excludesFile = ~/.gitignore
+[color "diff"]
+    whitespace = red reverse
+[pull]
+    rebase = false
+[init]
+    defaultBranch = master
+[push]
+    followtags = true
+[filter "lfs"]
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+    allowedSignersFile = ~/.config/git/allowed_signers
+[commit]
+    gpgsign = true
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
