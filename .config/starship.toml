@@ -1,0 +1,65 @@
+# Starship config
+
+# Don't print a new line at the start of the prompt
+add_newline = true
+#prompt_order=["rust","line_break","package","line_break","character"]
+scan_timeout = 30
+command_timeout = 2500
+
+[character]      # The name of the module we are configuring is "character"
+success_symbol = "[❯❯❯](bold green)"
+error_symbol = "[✗✗✗](bold red)"
+vimcmd_symbol = "[❮❮❮](bold blue)"
+vimcmd_visual_symbol = "[❮❮❮](bold purple)"
+
+[shell]
+zsh_indicator = ""
+# fish_indicator = ""
+disabled = false
+
+[shlvl]
+threshold = 3
+disabled = false
+
+[username]
+format = "[$user]($style) in "
+show_always = true
+
+[hostname]
+ssh_only = false
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+
+[time]
+disabled = false
+format = "🕙[ $time ]($style)"
+utc_time_offset = "1"
+style = "#666666"
+
+[cmd_duration]
+show_notifications = false
+min_time_to_notify = 30_000
+
+[git_commit]
+commit_hash_length = 40
+only_detached = false
+
+[git_status]
+#untracked_count.enabled = true
+#show_sync_count = true
+disabled = true
+
+[jobs]
+symbol_threshold = 0
+number_threshold = 0
+
+[custom.sudo]
+command = "echo sudo"
+when = "sudo -n true"
+style = "bold fg:#ffb05b"
+format = "\\([$output]($style)\\) "
+
+[battery]
+disabled = true
