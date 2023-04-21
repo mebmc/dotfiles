@@ -1,0 +1,98 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab_template name="base" {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    base name="yadm" focus=true {
+        pane split_direction="vertical" {
+            pane size="30%" stacked=true {
+                pane name="untracked" close_on_exit=false command="yadm" {
+                    args "status" "-s" "-u"
+                }
+                pane name="tracked" close_on_exit=false command="yadm" {
+                    args "list"
+                }
+                pane name="changed" close_on_exit=false command="watch" {
+                    args "-n2" "-ct" "yadm" "-c color.status=always" "status" "-s"
+                }
+            }
+            pane size="70%" focus=true
+        }
+    }
+
+    base name="git" {
+        pane split_direction="vertical" {
+            pane name="gitconfig" command="nvim" {
+                args ".gitconfig"
+            }
+            pane name="gitignore" command="nvim" {
+                args ".gitignore"
+            }
+        }
+    }
+
+    base name="zsh" { 
+        pane name="zshrc_user" command="nvim" {
+            args ".zshrc_user"
+        }
+    }
+
+    base name="alacritty" {
+        pane name="alacritty" cwd=".config/alacritty/" command="nvim" {
+            args "alacritty.yml"
+        }
+    }
+
+    base name="zellij" {
+        pane name="zellij" cwd=".config/zellij/" command="nvim" {
+            args "-c :Neotree" "config.kdl"
+        }
+    }
+
+    base name="astronvim" {
+        pane name="astronvim" cwd=".config/astronvim/lua/user/" command="nvim" {
+            args "-c :Neotree" "updater.lua"
+        }
+    }
+
+    base name="ssh" {
+        pane name="ssh" cwd=".ssh/" command="nvim" {
+            args "-c :Neotree" "config"
+        }
+    }
+
+    base name="tmux" {
+        pane name="tmux" cwd=".tmux.d/" command="nvim" {
+            args "-c :Neotree" "2_general.conf"
+        }
+    }
+
+    base name="zim" {
+        pane name="zim" command="nvim" {
+            args ".zimrc"
+        }
+    }
+
+    base name="scripts" {
+        pane name="scripts" cwd="scripts/" command="nvim" {
+            args "-c :Neotree" "bootstrap.sh"
+        }
+        pane size="20%" cwd="scripts/"
+    }
+}

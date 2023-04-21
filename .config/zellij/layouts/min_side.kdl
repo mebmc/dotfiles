@@ -1,0 +1,11 @@
+layout {
+    pane split_direction="vertical" {
+        pane name="minimal" size="60%" borderless=true
+        pane split_direction="horizontal" {
+            pane
+            pane
+            pane
+        }
+    }
+}
+

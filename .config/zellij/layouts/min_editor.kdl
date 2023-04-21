@@ -1,0 +1,7 @@
+layout {
+    pane split_direction="horizontal" {
+        pane name="editor" size="80%" borderless=true
+        pane name="shell" size="20%" borderless=true
+    }
+}
+

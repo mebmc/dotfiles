@@ -1,0 +1,53 @@
+layout {
+    pane_template name="ui" {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        children
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    ui {
+        pane split_direction="horizontal" {
+            pane split_direction="vertical" {
+                pane name="shell 01" command="zsh" close_on_exit=false
+                pane name="shell 02" command="zsh" close_on_exit=false
+                pane name="shell 03" command="zsh" close_on_exit=false
+                pane name="shell 04" command="zsh" close_on_exit=false
+                pane name="shell 05" command="zsh" close_on_exit=false
+            }
+            pane split_direction="vertical" {
+                pane name="shell 06" command="zsh" close_on_exit=false
+                pane name="shell 07" command="zsh" close_on_exit=false
+                pane name="shell 08" command="zsh" close_on_exit=false
+                pane name="shell 09" command="zsh" close_on_exit=false
+                pane name="shell 10" command="zsh" close_on_exit=false
+            }
+            pane split_direction="vertical" {
+                pane name="shell 11" command="zsh" close_on_exit=false
+                pane name="shell 12" command="zsh" close_on_exit=false
+                pane name="shell 13" command="zsh" close_on_exit=false
+                pane name="shell 14" command="zsh" close_on_exit=false
+                pane name="shell 15" command="zsh" close_on_exit=false
+            }
+            pane split_direction="vertical" {
+                pane name="shell 16" command="zsh" close_on_exit=false
+                pane name="shell 17" command="zsh" close_on_exit=false
+                pane name="shell 18" command="zsh" close_on_exit=false
+                pane name="shell 19" command="zsh" close_on_exit=false
+                pane name="shell 20" command="zsh" close_on_exit=false
+            }
+            pane split_direction="vertical" {
+                pane name="shell 21" command="zsh" close_on_exit=false
+                pane name="shell 22" command="zsh" close_on_exit=false
+                pane name="shell 23" command="zsh" close_on_exit=false
+                pane name="shell 24" command="zsh" close_on_exit=false
+                pane name="shell 25" command="zsh" close_on_exit=false
+            }
+        }
+
+    }
+}
+

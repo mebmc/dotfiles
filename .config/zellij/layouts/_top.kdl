@@ -1,0 +1,29 @@
+layout {
+    default_tab_template {
+        children
+    }
+
+    tab
+}
+keybinds {
+    normal {
+        /* bind "F13" { MoveFocusOrTab "Left"; } */
+        /* bind "F14" { MoveFocusOrTab "NewPane"; } */
+        /* bind "F15" { MoveFocusOrTab "Right"; } */
+    }
+    locked {}
+    resize {}
+    pane {}
+    move {}
+    tab {}
+    scroll {}
+    search {}
+    entersearch {}
+    renametab {}
+    renamepane {}
+    session {}
+    tmux {}
+    shared {}
+}
+
+pane_frames: false

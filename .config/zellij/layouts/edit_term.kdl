@@ -1,0 +1,19 @@
+layout {
+    pane_template name="with_term" {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        pane split_direction="horizontal" {
+            children
+            pane name="shell" size="20%" command="zsh" close_on_exit=false
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    with_term {
+        pane name="editor" size="80%" command="zsh" close_on_exit=false
+    }
+}
+
