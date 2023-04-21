@@ -1,0 +1,141 @@
+# Git ignore
+
+#*
+#!.*
+#!.*/*
+#!.*/*
+#!.*/*/*
+#!./*/*/*
+#!./*/*/*/*
+#!./*/*/*/*/*
+#!./*/*/*/*/*/*
+#!./*/*/*/*/*/*/*
+#!./*/*/*/*/*/*/*/*
+
+.DS_Store
+*.log
+
+# History files
+
+.bash_history
+.bash_sessions/
+.lesshst
+.mysql_history
+.node_repl_history
+.php_history
+.python_history
+.wget-hsts
+.zsh_history
+.zsh_sessions/
+
+# AWS CLI
+.aws/
+
+# Ansible
+.ansible/
+
+# Terraform
+.terraform.d/
+
+# Brew PHP
+.phpbrew/
+.config/composer/
+
+# MacOS
+
+.Trash/
+Applications/
+Books/
+Desktop/
+Documents/
+Downloads/
+Library/
+Local/
+Movies/
+Music/
+Pictures/
+Private/
+Public/
+
+# Cloud Storage
+
+.dropbox/
+Dropbox/
+OneDrive/
+
+# Work
+
+bin/
+git/
+temp/
+vscode/
+work/
+
+# Linux
+
+*.AppImage
+*.sqlite
+.cache/*
+.config/Bitwarden/*
+.config/coc/extensions/*
+.config/raycast/extensions/*
+.config/sublime-text-3/*
+.dotfiles/*
+.local/*
+.local/bin/*
+.local/lib/python*
+.mozilla/firefox/*
+.npm/*
+.private/*
+.siege/*
+.ssh/
+.sudo_as_admin_successful
+.tmux/*
+.vagrant.d/*
+.vscode-insiders/*
+.vscode/*
+.zshenv_local
+.zshenv_private
+
+
+# Programming Rust
+
+.cargo/
+.cargo/bin/
+.rustup/toolchains/
+
+# Version Managers
+
+.goenv/
+.nodenv/
+.nvm/
+.pyenv/
+.rbenv/
+
+# Node
+
+.npm-packages/
+.node-gyp/
+
+# Other
+
+.kube/
+.minikube/
+.docker/
+.fleet/
+.gem/
+.bundle/
+.3T/
+.m2/
+.gradle/
+.expo/
+.cocoapods/
+.stepman/
+.steampipe/
+.android/
+.ipfs/
+.ipfs-desktop/
+.zim/modules/
+.mongodb/
+.prefect/
+
