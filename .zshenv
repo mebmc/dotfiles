@@ -11,7 +11,7 @@ export LC_ALL="en_GB.UTF-8"
 
 # Path
 
-export PATH="$HOME/.local/bin:/opt/homebrew/bin:$HOME/linux/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.npm-packages/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.local/bin:/opt/homebrew/bin:$HOME/linux/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.npm-packages/bin:$HOME/.ghcup/bin/:/usr/local/bin:$PATH"
 
 # Base
 
@@ -21,6 +21,7 @@ export PAGER="less"
 # Extra
 
 export TZ_LIST="Europe/London;US/Central;US/Eastern;US/Pacific"
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export ICLOUD="$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
