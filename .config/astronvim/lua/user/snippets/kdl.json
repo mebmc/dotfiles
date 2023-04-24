@@ -1,0 +1,24 @@
+{
+    "setup": {
+        "prefix": [
+            "setup",
+            "template"
+        ],
+        "body": [
+            "<template>",
+            "\t$1",
+            "</template>",
+            "",
+            "<script lang=\"ts\" setup>",
+            "\t$2",
+            "</script>",
+            "",
+            "<style lang=\"sass\">",
+            "\t$3",
+            "</style>",
+            ""
+        ],
+        "description": "Header and footer"
+    }
+}
+
