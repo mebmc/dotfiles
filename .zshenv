@@ -18,10 +18,14 @@ export PATH="$HOME/.local/bin:/opt/homebrew/bin:$HOME/linux/bin:$HOME/go/bin:$HO
 export EDITOR="nvim"
 export PAGER="less"
 
+# Search
+
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
 # Extra
 
 export TZ_LIST="Europe/London;US/Central;US/Eastern;US/Pacific"
-export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export ICLOUD="$HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs"
