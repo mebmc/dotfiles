@@ -114,6 +114,12 @@
 # cmd - return : alacritty msg create-window || alacritty
 # cmd - return : kitty --single-instance -d ~
 cmd - n : open -na /Applications/Alacritty.app
+cmd - a : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Alacritty")) | .[0].id')
+cmd - s : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Safari")) | .[0].id')
+cmd - f : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Firefox")) | .[0].id')
+cmd - t : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Microsoft Teams")) | .[0].id')
+cmd - b : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Brave")) | .[0].id')
+cmd - m : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Music")) | .[0].id')
 
 # ################################################################ #
 # THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
