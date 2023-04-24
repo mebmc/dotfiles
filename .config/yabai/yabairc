@@ -88,6 +88,7 @@ yabai -m rule --add app="^Microsoft Remote Desktop$" manage=off
 yabai -m rule --add app="^Microsoft Teams$" manage=on
 yabai -m rule --add app="^OpenIn$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Unity$" title="^Tutorials$" manage-off
 
 # float settings windows
 yabai -m rule --add app='^Finder$' manage=off sticky=off
