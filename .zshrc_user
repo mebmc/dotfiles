@@ -111,6 +111,13 @@ alias lc='ll -schanged'       # Long format, newest status change (ctime) last
 # Network aliases
 alias wifi="nmtui"
 
+# yabai
+
+if hash yabai 2>/dev/null; then
+  alias yabai-windows="yabai -m query --windows | jq 'map({ \"id\": .id, \"app\": .app, \"title\": .title})'"
+  alias yabai-windows-full="yabai -m query --windows"
+fi
+
 
 # functions
 
