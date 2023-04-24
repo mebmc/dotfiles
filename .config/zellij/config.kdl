@@ -167,6 +167,7 @@ keybinds {
         unbind "Ctrl h"
         unbind "Ctrl g"
         unbind "Ctrl q"
+        unbind "Ctrl b"
 
         bind "Alt g" { SwitchToMode "Locked"; }
         bind "Alt e" { ToggleFloatingPanes; SwitchToMode "Normal"; }        
