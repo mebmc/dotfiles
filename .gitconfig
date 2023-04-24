@@ -21,7 +21,13 @@
     pager = delta
     excludesFile = ~/.gitignore
 [color "diff"]
-    whitespace = red reverse
+	whitespace = red reverse
+	meta = 11
+	frag = magenta bold
+	func = 146 bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
 [pull]
     rebase = false
 [init]
@@ -49,3 +55,10 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
