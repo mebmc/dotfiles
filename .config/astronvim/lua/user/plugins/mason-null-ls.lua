@@ -19,7 +19,7 @@ return {
             "rustfmt",
             "shellcheck",
             "shfmt",
-            "stylua",
+            -- "stylua",
             "vale",
             "yamlfix",
             "yamllint"

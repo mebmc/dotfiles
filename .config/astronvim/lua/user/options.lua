@@ -4,10 +4,10 @@ return {
         relativenumber = true, -- sets vim.opt.relativenumber
         number         = true, -- sets vim.opt.number
         spell          = true, -- sets vim.opt.spell
-        spellfile      = vim.fn.expand "~/.config/astronvim/lua/user/spell/en.utf-8.add",
-        dictionary     = {
-            "~/.config/astronvim/lua/user/spell/en.utf-8.dict",
-        },
+        -- spellfile      = vim.fn.expand "~/.config/astronvim/lua/user/spell/en.utf-8.add",
+        -- dictionary     = {
+        --     "~/.config/astronvim/lua/user/spell/en.utf-8.dict",
+        -- },
         signcolumn     = "yes", -- sets vim.opt.signcolumn to auto
         wrap           = false, -- sets vim.opt.wrap
         list           = true   -- show whitespace characters

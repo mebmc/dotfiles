@@ -11,6 +11,7 @@ return {
 		"hrsh7th/cmp-emoji",
 		"hrsh7th/cmp-calc",
 		"zbirenbaum/copilot-cmp",
+		"jcdickinson/codeium.nvim",
 		"chrisgrieser/cmp-nerdfont",
 		"Saecki/crates.nvim",
 		"ray-x/cmp-treesitter",
@@ -57,19 +58,20 @@ return {
 
 		-- modify the sources part of the options table
 		opts.sources = cmp.config.sources({
-			{ name = "copilot", priority = 1500, keyword_length = 1 },
-			{ name = "nvim_lsp", priority = 1000, keyword_length = 1 },
-			{ name = "luasnip", priority = 750, keyword_length = 1 },
-			{ name = "buffer", priority = 500, keyword_length = 1 },
-			{ name = "emoji", priority = 300, keyword_length = 1 },
-			{ name = "nerdfont", priority = 300, keyword_length = 1 },
-			{ name = "path", priority = 250, keyword_length = 1 },
-			{ name = "calc", priority = 250, keyword_length = 1 },
-			{ name = "crates", priority = 200, keyword_length = 1 },
-			{ name = "conventionalcommits", priority = 200, keyword_length = 1 },
-			{ name = "treesitter", priority = 200, keyword_length = 2 },
-			{ name = "dictionary", priority = 100, keyword_length = 1 },
-			{ name = "spell", priority = 100, keyword_length = 3 },
+			{ name = "nvim_lsp",            priority = 1500, keyword_length = 1 },
+			{ name = "copilot",             priority = 1000, keyword_length = 1 },
+			{ name = "codeium",             priority = 1000, keyword_length = 1 },
+			{ name = "luasnip",             priority = 750,  keyword_length = 1 },
+			{ name = "buffer",              priority = 500,  keyword_length = 1 },
+			{ name = "emoji",               priority = 300,  keyword_length = 1 },
+			{ name = "nerdfont",            priority = 300,  keyword_length = 1 },
+			{ name = "path",                priority = 250,  keyword_length = 1 },
+			{ name = "calc",                priority = 250,  keyword_length = 1 },
+			{ name = "crates",              priority = 200,  keyword_length = 1 },
+			{ name = "conventionalcommits", priority = 200,  keyword_length = 1 },
+			{ name = "treesitter",          priority = 200,  keyword_length = 2 },
+			{ name = "dictionary",          priority = 100,  keyword_length = 1 },
+			{ name = "spell",               priority = 100,  keyword_length = 3 },
 		})
 
 		local lspkind = require("lspkind")
@@ -80,6 +82,7 @@ return {
 				mode = "symbol_text",
 				menu = {
 					copilot = "[ copilot]",
+					codeium = "[ codeium]",
 					nvim_lsp = "[ lsp]",
 					luasnip = "[ luasnip]",
 					buffer = "[ buffer]",
@@ -114,32 +117,19 @@ return {
 		}
 
 		local dict = require("cmp_dictionary")
-		dict.setup({
-			-- The following are default values.
-			exact = 2,
-			first_case_insensitive = false,
-			document = false,
-			document_command = "wn %s -over",
-			async = false,
-			max_items = 1000,
-			capacity = 5,
-			debug = false,
-		})
-
 		dict.switcher({
-			-- filetype = {
-			--     lua = "spell/lua.dict",
-			--     javascript = { "spell/js.dict", "/path/to/js2.dict" },
-			-- },
+			filetype = {
+				lua = "~/.config/astronvim/lua/user/spell/lua.dict",
+				javascript = "~/.config/astronvim/lua/user/spell/js.dict",
+			},
 			filepath = {
-				["*"] = { "../spell/en.utf-8.dict" },
+				["plugins/*.lua"] = "~/.config/astronvim/lua/user/spell/lua-lazy.dict",
 			},
 			spelllang = {
-				en = "../spell/en.utf-8.dict",
-			},
+				en = "~/.config/astronvim/lua/user/spell/en.utf-8.dict",
+			}
 		})
 
-		-- return the new table to be used
 		return opts
 	end,
 }
