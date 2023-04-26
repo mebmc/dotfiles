@@ -51,7 +51,10 @@ alias y="yadm"
 alias ya="yadm add"
 alias yc="yadm status -s"
 alias yu="yadm status -s -u"
-alias ye="yadm list -a |  fzf --prompt='  Dotfile Config  ' --height=~50% --layout=reverse --border --exit-0 | xargs nvim"
+
+function ye () {
+  yadm list -a |  fzf --query="$*" --prompt='  Dotfile Config  ' --height=~50% --layout=reverse --border --exit-0 | xargs -I {} nvim $HOME/{}
+}
 
 ## Zellij
 
