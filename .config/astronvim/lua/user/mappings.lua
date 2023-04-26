@@ -66,14 +66,6 @@ return {
 			"<cmd>set autoindent expandtab tabstop=4 shiftwidth=4<cr>",
 			desc = "Tab size 4",
 		},
-		["<leader>jg"] = { "<cmd>ChatGPT<cr>", desc = " ChatGPT" },
-		["<leader>jG"] = { "<cmd>ChatGPTActAs<cr>", desc = " ChatGPT ActAs" },
-		["<leader>jp"] = {
-			function()
-				require("copilot.suggestion").toggle_auto_trigger()
-			end,
-			desc = " Copilot Auto Trigger",
-		},
 		["<leader>jz"] = { "<cmd>Twilight<cr>", desc = "Toggle Twilight" },
 		["<leader>jZ"] = { "<cmd>ZenMode<cr>", desc = "Toggle Zen Mode" },
 		["[Q"] = { "<cmd>cfirst<cr>", desc = "First Quick list" },
@@ -87,6 +79,15 @@ return {
 		["<leader>x"] = { name = " Diagnostics/Quickfix" },
 		["<leader>xl"] = { "<cmd>lopen<cr>", desc = "Location List" },
 		["<leader>xq"] = { "<cmd>copen<cr>", desc = "Quickfix List" },
+		["<leader>a"] = { name = "󱜚 AI" },
+		["<leader>ac"] = { "<cmd>ChatGPT<cr>", desc = " ChatGPT" },
+		["<leader>aC"] = { "<cmd>ChatGPTActAs<cr>", desc = " ChatGPT ActAs" },
+		["<leader>ap"] = {
+			function()
+				require("copilot.suggestion").toggle_auto_trigger()
+			end,
+			desc = " Copilot Auto Trigger",
+		},
 	},
 	t = {
 		-- setting a mapping to false will disable it
