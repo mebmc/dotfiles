@@ -1,4 +1,5 @@
 -- https://github.com/williamboman/mason-lspconfig.nvim
+-- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
 return {
 	"williamboman/mason-lspconfig.nvim",
 	dependencies = {
@@ -15,6 +16,7 @@ return {
 			"awk_ls",
 			"bashls",
 			"cssls",
+			"docker_compose_language_service",
 			"dockerls",
 			"gopls",
 			"gradle_ls",

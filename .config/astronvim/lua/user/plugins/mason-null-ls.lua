@@ -17,6 +17,7 @@ return {
             "jsonlint",
             "jq",
             "rustfmt",
+            "semgrep",
             "shellcheck",
             "shfmt",
             -- "stylua",
