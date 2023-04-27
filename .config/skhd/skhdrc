@@ -105,14 +105,6 @@
 #    "qutebrowser"
 # ]
 
-# open terminal, blazingly fast compared to iTerm/Hyper
-# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-# cmd+shift-return : emacsclient -c -n -a '' & sleep 0.5 && yabai -m window --focus $(yabai -m query --windows | jq '[.[] | select ( .title | contains("Emacs") )][0].id')
-
-# cmd+shift-e : doom +everywhere
-# cmd - return : /Applications/kitty.app/Contents/MacOS/kitty
-# cmd - return : alacritty msg create-window || alacritty
-# cmd - return : kitty --single-instance -d ~
 cmd - n : open -na /Applications/Alacritty.app
 cmd - a : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Alacritty")) | .[0].id')
 cmd - s : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Safari")) | .[0].id')
@@ -120,6 +112,14 @@ cmd - f : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.a
 cmd - t : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Microsoft Teams")) | .[0].id')
 cmd - b : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Brave")) | .[0].id')
 cmd - m : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Music")) | .[0].id')
+
+ctrl - u [
+        "Fiery Feeds" : skhd -k 'pageup'
+]
+
+ctrl - d [
+        "Fiery Feeds" : skhd -k 'pagedown'
+]
 
 # ################################################################ #
 # THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
