@@ -45,6 +45,14 @@ function nvims() {
   NVIM_APPNAME=$config nvim $@
 }
 
+function eg() {
+  git ls-files -cm | fzf --query="$*" --prompt=' 󰊢 Edit Git File  ' --height=~50% --layout=reverse --border --exit-0 | xargs nvim +":Neotree show"
+}
+
+function ef() {
+  fd -H --exclude=".git/" | fzf --query="$*" --prompt='   Edit File  ' --height=~50% --layout=reverse --border --exit-0 | xargs nvim +":Neotree show"
+}
+
 ## Yadm
 
 alias y="yadm"
@@ -53,7 +61,7 @@ alias yc="yadm status -s"
 alias yu="yadm status -s -u"
 
 function ye () {
-  yadm list -a |  fzf --query="$*" --prompt='  Dotfile Config  ' --height=~50% --layout=reverse --border --exit-0 | xargs -I {} nvim $HOME/{}
+  yadm list -a | fzf --query="$*" --prompt='  Dotfile Config  ' --height=~50% --layout=reverse --border --exit-0 | xargs -I {} nvim $HOME/{}
 }
 
 ## Zellij
@@ -79,6 +87,23 @@ alias tg="terragrunt"
 
 alias de="direnv"
 alias vg="lazygit"
+
+## SSH
+
+
+function ssp() {
+  HOST=$(rg --no-heading -IN "^Host" $HOME/.ssh/config.d/hosts_personal* \
+    | sd ' ' '\n' | grep -vE "(^Host|\*)" \
+    | fzf --query="$*" --prompt=' 󱘖 SSH Personal  ' --height=~50% --layout=reverse --border --exit-0)
+  ssh $HOST
+}
+
+function ssw() {
+  HOST=$(rg --no-heading -IN "^Host" $HOME/.ssh/config.d/hosts_work* \
+    | sd ' ' '\n' | grep -vE "(^Host|\*)" \
+    | fzf --query="$*" --prompt=' 󱘖 SSH Work  ' --height=~50% --layout=reverse --border --exit-0)
+  ssh $HOST
+}
 
 ## AI
 
