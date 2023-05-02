@@ -19,3 +19,6 @@
 [submodule ".config/nvim-chad"]
 	path = .config/nvim-chad
 	url = https://github.com/NvChad/NvChad
+[submodule "/Users/bmc/.tmux/plugins/tpm"]
+	path = /Users/bmc/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
