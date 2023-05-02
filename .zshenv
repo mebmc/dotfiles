@@ -11,7 +11,7 @@ export LC_ALL="en_GB.UTF-8"
 
 # Path
 
-export PATH="$HOME/.local/bin:/opt/homebrew/bin:$HOME/linux/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.npm-packages/bin:$HOME/.ghcup/bin/:/usr/local/bin:$PATH"
+export PATH="$HOME/.scripts:$HOME/.local/bin:/opt/homebrew/bin:$HOME/linux/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.npm-packages/bin:$HOME/.ghcup/bin/:/usr/local/bin:$PATH"
 
 # Base
 
