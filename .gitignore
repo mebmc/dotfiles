@@ -90,7 +90,6 @@ work/
 .siege/*
 .ssh/
 .sudo_as_admin_successful
-.tmux/*
 .vagrant.d/*
 .vscode-insiders/*
 .vscode/*
