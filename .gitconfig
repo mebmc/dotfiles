@@ -15,6 +15,8 @@
     pu = push
     unstage = reset HEAD --
     last = log -1 HEAD
+    clone-wt = "!sh $HOME/.scripts/git-clone-worktrees.sh"
+    wt = worktree
 [core]
     autocrlf = input
     editor = nvim
