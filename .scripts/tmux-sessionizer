@@ -6,7 +6,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/git ~/work ~/projects ~/temp ~/.config ~/.local ~ -mindepth 1 -maxdepth 1 -type d | fzf --prompt='  Tmux session  ' --border --exit-0 )
+    selected=$((zoxide query --list; find ~/git ~/work ~/projects ~/temp ~/.config ~/.local ~ -mindepth 1 -maxdepth 1 -type d) | awk '!x[$0]++' | fzf --prompt='  Tmux session  ' --border --exit-0 )
 fi
 
 if [[ -z $selected ]]; then
