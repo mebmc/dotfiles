@@ -23,7 +23,6 @@ alias e='nvim'
 alias et='nvim +":Neotree"'
 alias es='nvim +":Neotree show" +":SessionManager load_current_dir_session"'
 alias ve='neovide'
-alias hx="hexyl"
 alias hex="hexyl"
 
 alias nvim-astro="NVIM_APPNAME=nvim-astro nvim"
