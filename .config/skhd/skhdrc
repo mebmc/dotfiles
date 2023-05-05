@@ -105,13 +105,13 @@
 #    "qutebrowser"
 # ]
 
-cmd - n : open -na /Applications/Alacritty.app
-cmd - s : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Safari")) | .[0].id')
-cmd - d : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Alacritty")) | .[0].id')
-cmd - f : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Firefox")) | .[0].id')
-cmd - t : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Microsoft Teams")) | .[0].id')
-cmd - b : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Brave")) | .[0].id')
-cmd - m : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Music")) | .[0].id')
+cmd + ctrl - n : open -na /Applications/Alacritty.app
+cmd + ctrl - s : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Safari")) | .[0].id')
+cmd + ctrl - d : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Alacritty")) | .[0].id')
+cmd + ctrl - f : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Firefox")) | .[0].id')
+cmd + ctrl - t : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Microsoft Teams")) | .[0].id')
+cmd + ctrl - b : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Brave")) | .[0].id')
+cmd + ctrl - m : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Music")) | .[0].id')
 
 ctrl - u [
         "Fiery Feeds" : skhd -k 'pageup'
@@ -202,12 +202,12 @@ ctrl - d [
 # focus window
 # for left/right: if it fails becaus this was the west-most/east-most window, try to switch displays
 # this will make cmd -h/l work seamlessly over multiple monitors
-cmd - h : yabai -m window --focus west || yabai -m display --focus west
-cmd - l : yabai -m window --focus east || yabai -m display --focus east
+cmd + ctrl - h : yabai -m window --focus west || yabai -m display --focus west
+cmd + ctrl - l : yabai -m window --focus east || yabai -m display --focus east
 
 # for up/down: try to switch focus in a stack first, if this fails (because there is no stack or because we are at the topmost or last element of the stack) focus the north/south window
-cmd - j : yabai -m window --focus stack.next || yabai -m window --focus south
-cmd - k : yabai -m window --focus stack.prev || yabai -m window --focus north
+cmd + ctrl - j : yabai -m window --focus stack.next || yabai -m window --focus south
+cmd + ctrl - k : yabai -m window --focus stack.prev || yabai -m window --focus north
 
 # move managed window
 shift + cmd - h : yabai -m window --warp west || yabai -m window --display west
@@ -216,38 +216,28 @@ shift + cmd - j : yabai -m window --warp south
 shift +  cmd - k : yabai -m window --warp north
 
 # spaces
-cmd - 1 : yabai -m space --focus 1 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd - 2 : yabai -m space --focus 2 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd - 3 : yabai -m space --focus 3 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd - 4 : yabai -m space --focus 4 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd - 5 : yabai -m space --focus 5 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd - 6 : yabai -m space --focus 6 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd - 7 : yabai -m space --focus 7 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd - 8 : yabai -m space --focus 8 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd - 9 : yabai -m space --focus 9 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd - 0 : yabai -m space --focus 10 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + alt - 6 : yabai -m space --focus 11 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + alt - 7 : yabai -m space --focus 12 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + alt - 8 : yabai -m space --focus 13 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + alt - 9 : yabai -m space --focus 14 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + alt - 0 : yabai -m space --focus 15 || yabai -m space --focus recent; sketchybar --trigger window_focus
+cmd + ctrl - 1 : yabai -m space --focus 1 || yabai -m space --focus recent; sketchybar --trigger window_focus
+cmd + ctrl - 2 : yabai -m space --focus 2 || yabai -m space --focus recent; sketchybar --trigger window_focus
+cmd + ctrl - 3 : yabai -m space --focus 3 || yabai -m space --focus recent; sketchybar --trigger window_focus
+cmd + ctrl - 4 : yabai -m space --focus 4 || yabai -m space --focus recent; sketchybar --trigger window_focus
+cmd + ctrl - 5 : yabai -m space --focus 5 || yabai -m space --focus recent; sketchybar --trigger window_focus
+cmd + ctrl - 6 : yabai -m space --focus 6 || yabai -m space --focus recent; sketchybar --trigger window_focus
+cmd + ctrl - 7 : yabai -m space --focus 7 || yabai -m space --focus recent; sketchybar --trigger window_focus
+cmd + ctrl - 8 : yabai -m space --focus 8 || yabai -m space --focus recent; sketchybar --trigger window_focus
+cmd + ctrl - 9 : yabai -m space --focus 9 || yabai -m space --focus recent; sketchybar --trigger window_focus
+cmd + ctrl - 0 : yabai -m space --focus 10 || yabai -m space --focus recent; sketchybar --trigger window_focus
 
 # send window to desktop and follow focus
-# shift + cmd - 1 : yabai -m window --space 1 && sketchybar --trigger windows_on_spaces
-# shift + cmd - 2 : yabai -m window --space 2 && sketchybar --trigger windows_on_spaces
-# shift + cmd - 3 : yabai -m window --space 3 && sketchybar --trigger windows_on_spaces
-# shift + cmd - 4 : yabai -m window --space 4 && sketchybar --trigger windows_on_spaces
-# shift + cmd - 5 : yabai -m window --space 5 && sketchybar --trigger windows_on_spaces
-# shift + cmd - 6 : yabai -m window --space 6 && sketchybar --trigger windows_on_spaces
-# shift + cmd - 7 : yabai -m window --space 7 && sketchybar --trigger windows_on_spaces
-# shift + cmd - 8 : yabai -m window --space 8 && sketchybar --trigger windows_on_spaces
-# shift + cmd - 9 : yabai -m window --space 9 && sketchybar --trigger windows_on_spaces
-# shift + cmd - 0 : yabai -m window --space 10 && sketchybar --trigger windows_on_spaces
-# shift + cmd + alt - 6 : yabai -m window --space 11 && sketchybar --trigger windows_on_spaces
-# shift + cmd + alt - 7 : yabai -m window --space 12 && sketchybar --trigger windows_on_spaces
-# shift + cmd + alt - 8 : yabai -m window --space 13 && sketchybar --trigger windows_on_spaces
-# shift + cmd + alt - 9 : yabai -m window --space 14 && sketchybar --trigger windows_on_spaces
-# shift + cmd + alt - 0 : yabai -m window --space 15 && sketchybar --trigger windows_on_spaces
+shift + cmd - 1 : yabai -m window --space 1 && sketchybar --trigger windows_on_spaces
+shift + cmd - 2 : yabai -m window --space 2 && sketchybar --trigger windows_on_spaces
+shift + cmd - 3 : yabai -m window --space 3 && sketchybar --trigger windows_on_spaces
+shift + cmd - 4 : yabai -m window --space 4 && sketchybar --trigger windows_on_spaces
+shift + cmd - 5 : yabai -m window --space 5 && sketchybar --trigger windows_on_spaces
+shift + cmd - 6 : yabai -m window --space 6 && sketchybar --trigger windows_on_spaces
+shift + cmd - 7 : yabai -m window --space 7 && sketchybar --trigger windows_on_spaces
+shift + cmd - 8 : yabai -m window --space 8 && sketchybar --trigger windows_on_spaces
+shift + cmd - 9 : yabai -m window --space 9 && sketchybar --trigger windows_on_spaces
+shift + cmd - 0 : yabai -m window --space 10 && sketchybar --trigger windows_on_spaces
 
 cmd - q : yabai -m window --minimize
 cmd - w : yabai -m window --deminimize
