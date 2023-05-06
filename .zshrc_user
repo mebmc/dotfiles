@@ -63,6 +63,10 @@ function ye () {
   yadm list -a | fzf --query="$*" --prompt='  Dotfile Config  ' --height=~50% --layout=reverse --border --exit-0 | xargs -I {} nvim $HOME/{}
 }
 
+# Tmux
+
+alias tmux="tmux new -A -s gen"
+
 ## Zellij
 
 alias z="zellij"
