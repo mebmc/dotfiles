@@ -82,6 +82,8 @@ return {
 		["<leader>a"] = { name = "󱜚 AI" },
 		["<leader>ac"] = { "<cmd>ChatGPT<cr>", desc = " ChatGPT" },
 		["<leader>aC"] = { "<cmd>ChatGPTActAs<cr>", desc = " ChatGPT ActAs" },
+		["<leader>ae"] = { "<cmd>ChatGPTEditWithInstructions<cr>", desc = " ChatGPT EditWith" },
+		["<leader>aE"] = { "<cmd>ChatGPTCompleteCode<cr>", desc = " ChatGPT Complete" },
 		["<leader>ap"] = {
 			function()
 				require("copilot.suggestion").toggle_auto_trigger()
