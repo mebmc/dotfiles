@@ -140,6 +140,7 @@ plugins=(
 
 # Custom plugins
   1password-extra
+  register
   zsh-syntax-highlighting
   zsh-vi-mode
 
