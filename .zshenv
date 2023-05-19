@@ -9,10 +9,6 @@ export LC_NUMERIC="en_GB.UTF-8"
 export LC_TIME="en_GB.UTF-8"
 export LC_ALL="en_GB.UTF-8"
 
-# Path
-
-export PATH="$HOME/.scripts:$HOME/.nix-profile/bin:$HOME/.local/bin:/opt/homebrew/bin:$HOME/linux/bin:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.npm-packages/bin:$HOME/.ghcup/bin/:/usr/local/bin:$PATH"
-
 # Base
 
 export EDITOR="nvim"
