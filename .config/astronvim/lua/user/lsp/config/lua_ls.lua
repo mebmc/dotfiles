@@ -1,3 +1,4 @@
+-- https://github.com/LuaLS/lua-language-server
 return {
     settings = {
         Lua = {
@@ -25,6 +26,13 @@ return {
             },
             hint = {
                 enable = true
+            },
+            format = {
+                enable = true,
+                defaultConfig = {
+                    indent_style = "space",
+                    indent_size = 4,
+                }
             }
         }
     }
