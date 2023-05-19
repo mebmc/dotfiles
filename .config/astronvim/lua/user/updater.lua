@@ -1,7 +1,7 @@
 return {
     remote         = "origin",  -- remote to use
     channel        = "stable",  -- "stable" or "nightly"
-    version        = "v3.14.0", -- "latest", tag name, or regex search like "v1.*" (STABLE ONLY)
+    version        = "v3.15.7", -- "latest", tag name, or regex search like "v1.*" (STABLE ONLY)
     branch         = "main",    -- branch name (NIGHTLY ONLY)
     commit         = nil,       -- commit hash (NIGHTLY ONLY)
     pin_plugins    = nil,       -- nil, true, false (nil will pin plugins on stable only)
