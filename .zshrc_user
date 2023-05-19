@@ -139,7 +139,7 @@ alias lk='ll -ssize'          # Long format, largest file size last
 alias lt='ll -smodified'      # Long format, newest modification time last
 alias lc='ll -schanged'       # Long format, newest status change (ctime) last
 
-alias tree="exa --tree --level 3"
+alias tree="exa --icons --tree --level 3"
 
 # Network aliases
 alias wifi="nmtui"
