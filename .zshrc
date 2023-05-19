@@ -127,6 +127,7 @@ plugins=(
   sublime
   taskwarrior
   terraform
+  tmux
   urltools
   vagrant
   vault
@@ -178,6 +179,19 @@ if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
   export EDITOR='nvim'
+fi
+
+# Set TMUX session vars
+tmux_running=$(pgrep tmux)
+if [[ -n $TMUX ]] && [[ -n $tmux_running ]]; then
+  TMUX_SESSION_NAME=$(tmux display-message -p "#{session_name}")
+  TMUX_SESSION_ID=$(tmux display-message -p "#{session_id}")
+  TMUX_SESSION_PATH=$(tmux display-message -p "#{session_path}")
+  TMUX_SESSION_CREATED=$(tmux display-message -p "#{session_created}")
+  export TMUX_SESSION_NAME
+  export TMUX_SESSION_ID
+  export TMUX_SESSION_PATH
+  export TMUX_SESSION_CREATED
 fi
 
 # Compilation flags
