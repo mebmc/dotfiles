@@ -24,20 +24,24 @@ return {
             "vale",
             "yamlfix",
             "yamllint"
-        }
-        -- handlers = {
-        --     function(config)
-        --         -- Keep original functionality
-        --         require('mason-nvim-dap').default_setup(config)
-        --     end,
-        --     taplo = function()
-        --     end, -- disable taplo in null-ls, it's taken care of by lspconfig
-        --     prettierd = function()
-        --         local null_ls = require "null-ls"
-        --         null_ls.register(
-        --             null_ls.builtins.formatting.prettierd.with { extra_filetypes = { "markdown", "rmd", "qmd" } }
-        --         )
-        --     end,
-        -- },
-    }
+        },
+        handlers = {
+            semgrep = function(source_name, methods)
+                local null_ls = require("null-ls")
+                null_ls.register(
+                    null_ls.builtins.diagnostics.semgrep.with({
+                        args = { "--config", "auto", "-q", "--json", "$FILENAME" },
+                        timeout = 30000,
+                        method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+                    })
+                )
+            end,
+            prettierd = function()
+                local null_ls = require "null-ls"
+                null_ls.register(
+                    null_ls.builtins.formatting.prettierd.with { extra_filetypes = { "markdown", "rmd", "qmd" } }
+                )
+            end,
+        },
+    },
 }
