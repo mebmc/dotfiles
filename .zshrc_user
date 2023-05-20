@@ -128,6 +128,12 @@ if [[ ! -f $HOME/.zshenv_private ]]; then
   source $HOME/.zshenv_private
 fi
 
+
+## Vim quit
+
+alias :q="exit"
+alias :Q="exit"
+
 ## ls aliases
 
 alias ls='exa --group-directories-first --icons'
