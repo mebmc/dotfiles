@@ -36,6 +36,7 @@ return {
 			"tsserver",
 			"vimls",
 			"yamlls",
+			"zls"
 		},
 	},
 	-- config = function()
