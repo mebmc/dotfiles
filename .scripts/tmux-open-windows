@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+dirs=$(find "$(pwd)/$1" -type d -mindepth 1 -maxdepth 1)
+for dir in $dirs; do
+    basename=$(basename "$dir")
+    tmux new-window -c "$dir" -n "$basename"
+done
