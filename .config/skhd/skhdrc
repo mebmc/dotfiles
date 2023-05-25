@@ -116,13 +116,15 @@
 #    "qutebrowser"
 # ]
 
-cmd + ctrl - t : open -na /Applications/Alacritty.app
-cmd + ctrl - s : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Safari")) | .[0].id')
-cmd + ctrl - d : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Alacritty")) | .[0].id')
-cmd + ctrl - f : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Firefox")) | .[0].id')
-cmd + ctrl - t : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Microsoft Teams")) | .[0].id')
-cmd + ctrl - b : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Brave")) | .[0].id')
-cmd + ctrl - m : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Music")) | .[0].id')
+# hyper - t : open -na /Applications/Alacritty.app
+
+hyper - t : open -na /Applications/Alacritty.app
+hyper - s : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Safari")) | .[0].id')
+hyper - d : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Alacritty")) | .[0].id')
+hyper - f : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Firefox")) | .[0].id')
+hyper - c : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Microsoft Teams")) | .[0].id')
+hyper - b : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Brave")) | .[0].id')
+hyper - m : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Music")) | .[0].id')
 
 ctrl - u [
         "Fiery Feeds" : skhd -k 'pageup'
@@ -136,18 +138,18 @@ ctrl - d [
 # focus window
 # for left/right: if it fails becaus this was the west-most/east-most window, try to switch displays
 # this will make cmd -h/l work seamlessly over multiple monitors
-cmd + ctrl - h : yabai -m window --focus west || yabai -m display --focus west
-cmd + ctrl - l : yabai -m window --focus east || yabai -m display --focus east
+hyper - h : yabai -m window --focus west || yabai -m display --focus west
+hyper - l : yabai -m window --focus east || yabai -m display --focus east
 
 # for up/down: try to switch focus in a stack first, if this fails (because there is no stack or because we are at the topmost or last element of the stack) focus the north/south window
-cmd + ctrl - j : yabai -m window --focus stack.next || yabai -m window --focus south
-cmd + ctrl - k : yabai -m window --focus stack.prev || yabai -m window --focus north
+hyper - j : yabai -m window --focus stack.next || yabai -m window --focus south
+hyper - k : yabai -m window --focus stack.prev || yabai -m window --focus north
 
 # move managed window
 shift + cmd - h : yabai -m window --warp west || yabai -m window --display west
 shift + cmd - l : yabai -m window --warp east || yabai -m window --display east
 shift + cmd - j : yabai -m window --warp south 
-shift +  cmd - k : yabai -m window --warp north
+shift + cmd - k : yabai -m window --warp north
 
 # spaces
 cmd + ctrl - 1 : yabai -m space --focus 1 || yabai -m space --focus recent; sketchybar --trigger window_focus
