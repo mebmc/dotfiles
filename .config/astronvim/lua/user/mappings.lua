@@ -56,6 +56,7 @@ return {
 			end,
 			desc = "Find all config files",
 		},
+		["<leader>L"] = { name = "󰑷 Lspsaga" },
 		["<leader>j"] = { name = " User" },
 		["<leader>jt"] = { "<cmd>Trouble<cr>", desc = "Trouble" },
 		["<leader>j2"] = {
