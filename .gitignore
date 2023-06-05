@@ -103,6 +103,10 @@ work/
 .cargo/bin/
 .rustup/toolchains/
 
+# Programming Go
+
+go/
+
 # Version Managers
 
 .goenv/
@@ -118,6 +122,7 @@ work/
 
 # Other
 
+.vim/pack/
 .kube/
 .minikube/
 .docker/
@@ -137,4 +142,6 @@ work/
 .zim/modules/
 .mongodb/
 .prefect/
+.ghcup/
+My project/
 
