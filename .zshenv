@@ -1,3 +1,7 @@
+# Add Nix and Brew to Path
+
+export PATH="$HOME/.nix-profile/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
+
 # Locale
 
 export LANG="en_GB.UTF-8"
