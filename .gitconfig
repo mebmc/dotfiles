@@ -18,6 +18,7 @@
     unstage = reset HEAD --
     last = log -1 HEAD
     clone-wt = "!sh $HOME/.scripts/git-clone-worktrees.sh"
+    sm = submodule
     wt = worktree
 [core]
     autocrlf = input
@@ -38,6 +39,7 @@
     defaultBranch = master
 [push]
     followtags = true
+	autoSetupRemote = true
 [filter "lfs"]
     process = git-lfs filter-process
     required = true
