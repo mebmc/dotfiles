@@ -19,7 +19,7 @@ return {
     },
     keys = {
         { "<leader>as", desc = "󱙺 Summarize text" },
-        { "<leader>ag", desc = "󱙺 Generate git message" },
+        { "<leader>am", desc = "󱙺 Generate git message" },
     },
     config = function()
         require("neoai").setup({

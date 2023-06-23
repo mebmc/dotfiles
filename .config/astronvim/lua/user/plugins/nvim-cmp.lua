@@ -10,8 +10,8 @@ return {
 		"hrsh7th/cmp-path",
 		-- "hrsh7th/cmp-emoji",
 		"hrsh7th/cmp-calc",
-		"zbirenbaum/copilot-cmp",
-		"jcdickinson/codeium.nvim",
+		-- "zbirenbaum/copilot-cmp",
+		-- "jcdickinson/codeium.nvim",
 		"chrisgrieser/cmp-nerdfont",
 		"Saecki/crates.nvim",
 		"ray-x/cmp-treesitter",
@@ -59,8 +59,8 @@ return {
 		-- modify the sources part of the options table
 		opts.sources = cmp.config.sources({
 			{ name = "nvim_lsp",            priority = 1500, keyword_length = 1 },
-			{ name = "copilot",             priority = 1000, keyword_length = 1 },
-			{ name = "codeium",             priority = 1000, keyword_length = 1 },
+			-- { name = "copilot",             priority = 1000, keyword_length = 1 },
+			-- { name = "codeium",             priority = 1000, keyword_length = 1 },
 			{ name = "luasnip",             priority = 750,  keyword_length = 1 },
 			{ name = "buffer",              priority = 500,  keyword_length = 1 },
 			{ name = "emoji",               priority = 300,  keyword_length = 1 },
@@ -106,7 +106,7 @@ return {
 				cmp.config.compare.offset,
 				-- cmp.config.compare.scopes, --this is commented in nvim-cmp too
 				cmp.config.compare.exact,
-				require("copilot_cmp.comparators").prioritize,
+				-- require("copilot_cmp.comparators").prioritize,
 				cmp.config.compare.score,
 				require("cmp-under-comparator").under,
 				cmp.config.compare.kind,

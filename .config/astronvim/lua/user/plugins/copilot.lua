@@ -5,7 +5,7 @@ return {
     build = ":Copilot auth",
     opts = {
         panel = {
-            enabled = true,
+            enabled = false,
             auto_refresh = false,
             keymap = {
                 jump_prev = "[[",
@@ -24,11 +24,11 @@ return {
             auto_trigger = false,
             debounce = 75,
             keymap = {
-                accept = "<M-l>",
+                accept = "<Tab>",
                 accept_word = false,
                 accept_line = false,
-                next = "<M-]>",
-                prev = "<M-[>",
+                next = "<C-e>",
+                prev = "<C-w>",
                 dismiss = "<C-]>",
             },
         },

@@ -81,11 +81,11 @@ return {
 		["<leader>xl"] = { "<cmd>lopen<cr>", desc = "Location List" },
 		["<leader>xq"] = { "<cmd>copen<cr>", desc = "Quickfix List" },
 		["<leader>a"] = { name = "󱜚 AI" },
-		["<leader>ac"] = { "<cmd>ChatGPT<cr>", desc = " ChatGPT" },
-		["<leader>aC"] = { "<cmd>ChatGPTActAs<cr>", desc = " ChatGPT ActAs" },
+		["<leader>ag"] = { "<cmd>ChatGPT<cr>", desc = " ChatGPT" },
+		["<leader>aG"] = { "<cmd>ChatGPTActAs<cr>", desc = " ChatGPT ActAs" },
 		["<leader>ae"] = { "<cmd>ChatGPTEditWithInstructions<cr>", desc = " ChatGPT EditWith" },
 		["<leader>aE"] = { "<cmd>ChatGPTCompleteCode<cr>", desc = " ChatGPT Complete" },
-		["<leader>ap"] = {
+		["<leader>ac"] = {
 			function()
 				require("copilot.suggestion").toggle_auto_trigger()
 			end,
