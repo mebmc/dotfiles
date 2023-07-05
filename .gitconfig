@@ -6,6 +6,8 @@
     path = ~/.gitconfig_work
 [includeIf "gitdir:~/.local/share/yadm/repo.git"]
     path = ~/.gitconfig_personal
+[includeIf "gitdir:~/.config/"]
+    path = ~/.gitconfig_personal
 [alias]
     co = checkout
     br = branch
