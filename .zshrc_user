@@ -88,6 +88,7 @@ alias tg="terragrunt"
 
 ## System
 
+alias u="unistry"
 alias de="direnv"
 alias vg="lazygit"
 
