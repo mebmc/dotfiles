@@ -1,6 +1,6 @@
 # Add Nix and Brew to Path
 
-export PATH="$HOME/.nix-profile/bin:/opt/homebrew/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.nix-profile/bin:/opt/homebrew/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/usr/local/bin:$PATH"
 
 # Locale
 
@@ -17,6 +17,11 @@ export LC_ALL="en_GB.UTF-8"
 
 export EDITOR="nvim"
 export PAGER="less"
+
+# Secrets
+
+export SOPS_AGE_KEY_FILE="$XDG_CONFIG_HOME/sops/personal.agekey"
+export SOPS_AGE_RECIPIENTS="age1phjmatzsug76d2u6tqgf2l7s9a5tmv9splu43j05qxnj6cexxvtspv770g"
 
 # Search
 
