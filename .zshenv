@@ -18,6 +18,11 @@ export LC_ALL="en_GB.UTF-8"
 export EDITOR="nvim"
 export PAGER="less"
 
+# Secrets
+
+export SOPS_AGE_KEY_FILE="$XDG_CONFIG_HOME/sops/personal.agekey"
+export SOPS_AGE_RECIPIENTS="age1phjmatzsug76d2u6tqgf2l7s9a5tmv9splu43j05qxnj6cexxvtspv770g"
+
 # Search
 
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
