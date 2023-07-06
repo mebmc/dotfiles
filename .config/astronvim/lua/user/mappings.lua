@@ -4,6 +4,8 @@ local astro_utils = require("astronvim.utils")
 
 return {
 	n = {
+		["<C-o>"] = { "<cmd>Telescope oldfiles<cr>", desc = "Previous files" },
+		["<C-p>"] = { "<cmd>Telescope fd<cr>", desc = "Local files" },
 		-- second key is the lefthand side of the map
 		["<D-/>"] = function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
 		["<C-/>"] = function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
