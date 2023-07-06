@@ -45,11 +45,11 @@ function nvims() {
 }
 
 function eg() {
-  git ls-files -cm | fzf --query="$*" --prompt=' 󰊢 Edit Git File  ' --height=~50% --layout=reverse --border --exit-0 | xargs nvim +":Neotree show"
+  git ls-files -cm | fzf --query="$*" --prompt=' 󰊢 Edit Git File  ' --height=50 --layout=reverse --border --exit-0 --preview="head -n100 {}" | xargs nvim
 }
 
 function ef() {
-  fd -H --exclude=".git/" | fzf --query="$*" --prompt='   Edit File  ' --height=~50% --layout=reverse --border --exit-0 | xargs nvim +":Neotree show"
+  fd -H --exclude=".git/" | fzf --query="$*" --prompt='   Edit File  ' --height=50 --layout=reverse --border --exit-0 --preview="head -n100 {}" | xargs nvim
 }
 
 ## Yadm
@@ -88,6 +88,7 @@ alias tg="terragrunt"
 
 ## System
 
+alias u="unistry"
 alias de="direnv"
 alias vg="lazygit"
 

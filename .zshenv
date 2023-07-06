@@ -30,6 +30,7 @@ export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Extra
 
+export CC="/usr/bin/gcc"
 export TZ_LIST="Europe/London;US/Central;US/Eastern;US/Pacific"
 
 export XDG_CONFIG_HOME="$HOME/.config"
