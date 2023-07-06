@@ -1,3 +1,15 @@
+function fill () {
+  sub=${1:=0}
+  if hash term-height; then
+    TERM_HEIGHT=$(( $(term-height) - 3 - $sub))
+  else
+    TERM_HEIGHT="$(( $(tput cols) - 2 - $sub ))"
+  fi
+  for i in $(seq 1 $TERM_HEIGHT); do echo; done
+}
+alias clear="clear && fill 2"
+clear
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -106,6 +118,7 @@ plugins=(
   macos
   # magic-enter
   mosh
+  nix-shell
   nmap
   node
   nodenv

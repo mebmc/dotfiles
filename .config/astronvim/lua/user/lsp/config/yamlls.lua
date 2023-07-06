@@ -3,6 +3,7 @@ return {
         yaml = {
             editor = {
                 formatOnType = true,
+                tabSize = 4,
             },
             format = {
                 enable         = true,

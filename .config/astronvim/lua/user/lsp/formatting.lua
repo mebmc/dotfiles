@@ -6,7 +6,8 @@ return {
             "go",
             "rust",
             "lua",
-            "python"
+            "python",
+            "yaml"
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
             "javascript",

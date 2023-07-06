@@ -15,6 +15,9 @@ setopt INC_APPEND_HISTORY
 
 # Aliases and functions
 
+alias ca="c $HOME/.config/nvim"
+alias cv="c $HOME/.config/astronvim"
+
 ## Editor
 
 export NVIM_APPNAME="nvim-astro"
@@ -29,6 +32,14 @@ alias nvim-astro="NVIM_APPNAME=nvim-astro nvim"
 alias nvim-chad="NVIM_APPNAME=nvim-chad nvim"
 alias nvim-lazy="NVIM_APPNAME=nvim-lazy nvim"
 alias nvim-test="NVIM_APPNAME=nvim-test nvim"
+
+function ea () {
+  ( cd ~/.config/nvim && fd . | fzf --query="$*" --prompt='  Astronvim Config  ' --height=~50% --layout=reverse --border --exit-0 ) | xargs -I {} nvim $HOME/.config/nvim/{}
+}
+
+function ev () {
+  ( cd ~/.config/astronvim && fd . | fzf --query="$*" --prompt='  Neovim Config  ' --height=~50% --layout=reverse --border --exit-0 ) | xargs -I {} nvim $HOME/.config/astronvim/{}
+}
 
 function nvims() {
   items=("default" "nvim-lazy" "nvim-astro" "nvim-chad" "nvim-test")
@@ -63,6 +74,7 @@ function ye () {
   yadm list -a | fzf --query="$*" --prompt='  Dotfile Config  ' --height=~50% --layout=reverse --border --exit-0 | xargs -I {} nvim $HOME/{}
 }
 
+
 # Tmux
 
 alias tmux="tmux new -A -s gen"
@@ -85,6 +97,7 @@ alias ansible-vault="ANSIBLE_VERBOSITY=0 ansible-vault"
 alias aw="aws"
 alias j="just"
 alias tg="terragrunt"
+alias gl="glab"
 
 ## System
 
@@ -165,14 +178,26 @@ function zr () { zellij run --name "$*" --close-on-exit -- zsh -ic "$*";}
 function zrd () { zellij run --name "$*" --direction "Down" --close-on-exit -- zsh -ic "$*";}
 function zrf () { zellij run --name "$*" --floating --close-on-exit -- zsh -ic "$*";}
 function ze () { zellij edit "$*";}
-function zed () { zellij edit --direction "Down" "$*";}
+# function zed () { zellij edit --direction "Down" "$*";}
 function zef () { zellij edit --floating "$*";}
 function zl () {
   ZJ_LAYOUT="$(ls -1 $HOME/.config/zellij/layouts | sed 's/.kdl//g' | grep -vE '(^_)|(\.swap$)' | sk)"
   zellij action new-tab --layout $ZJ_LAYOUT
 }
 
+function fill () {
+  sub=${1:=0}
+  if hash term-height; then
+    TERM_HEIGHT=$(( $(term-height) - 3 - $sub))
+  else
+    TERM_HEIGHT="$(( $(tput cols) - 2 - $sub ))"
+  fi
+  for i in $(seq 1 $TERM_HEIGHT); do echo; done
+}
+
 # Extra
+
+alias clear="clear && fill 2"
 
 eval "$(rtx activate zsh)"
 eval "$(zoxide init --cmd c zsh)"

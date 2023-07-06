@@ -5,6 +5,8 @@ local astro_utils = require("astronvim.utils")
 return {
 	n = {
 		-- second key is the lefthand side of the map
+		["<D-/>"] = function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
+		["<C-/>"] = function() require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1) end,
 		-- mappings seen under group name "Buffer"
 		["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
 		["<leader>bc"] = {
@@ -58,7 +60,8 @@ return {
 		},
 		["<leader>L"] = { name = "󰑷 Lspsaga" },
 		["<leader>j"] = { name = " User" },
-		["<leader>jt"] = { "<cmd>Trouble<cr>", desc = "Trouble" },
+		["<leader>jt"] = { "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Trouble Document" },
+		["<leader>jT"] = { "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Trouble Workspace" },
 		["<leader>j2"] = {
 			"<cmd>set autoindent expandtab tabstop=2 shiftwidth=2<cr>",
 			desc = "Tab size 2",
