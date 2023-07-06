@@ -10,7 +10,8 @@ return {
         -- },
         signcolumn     = "yes", -- sets vim.opt.signcolumn to auto
         wrap           = false, -- sets vim.opt.wrap
-        list           = true   -- show whitespace characters
+        list           = true,  -- show whitespace characters
+        clipboard      = ""     -- not using 'unnammedplus'
     },
     g = {
         mapleader                  = " ",  -- sets vim.g.mapleader
