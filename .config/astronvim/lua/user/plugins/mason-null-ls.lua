@@ -22,7 +22,6 @@ return {
             "shfmt",
             -- "stylua",
             "vale",
-            "yamlfix",
             "yamllint"
         },
         handlers = {
