@@ -1,0 +1,6 @@
+tmux/plugins/*
+op/plugins/*
+raycast/extensions/*
+gcloud/logs/*
+coc/extensions/*
+*.log
