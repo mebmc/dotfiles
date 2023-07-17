@@ -28,20 +28,20 @@
     pager = delta
     excludesFile = ~/.gitignore
 [color "diff"]
-	whitespace = red reverse
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
+    whitespace = red reverse
+    meta = 11
+    frag = magenta bold
+    func = 146 bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
 [pull]
     rebase = false
 [init]
     defaultBranch = master
 [push]
     followtags = true
-	autoSetupRemote = true
+    autoSetupRemote = true
 [filter "lfs"]
     process = git-lfs filter-process
     required = true
@@ -59,14 +59,15 @@
 [delta]
     navigate = true
     light = false
+    side-by-side = true
 [merge]
     conflictstyle = diff3
 [diff]
     colorMoved = default
 [color]
-	ui = true
+    ui = true
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
