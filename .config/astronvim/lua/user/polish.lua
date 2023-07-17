@@ -33,4 +33,6 @@ return function()
     }
 
     vim.g.neovide_transparency = 0.9
+
+    require "user.autocmds"
 end
