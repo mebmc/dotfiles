@@ -197,10 +197,9 @@ function fill () {
 
 # Extra
 
-alias clear="clear && fill 2"
-
 eval "$(rtx activate zsh)"
 eval "$(zoxide init --cmd c zsh)"
+eval "$(atuin init zsh)"
 
 # Disable alacritty dock bouncing https://github.com/alacritty/alacritty/issues/2950
 printf "\e[?1042l"
