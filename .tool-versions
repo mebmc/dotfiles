@@ -1,14 +1,15 @@
-direnv  2.32.2
-java    oracle-17
-consul  1.14.3
-nodejs  18.16.0
-python  3.10.11 2.7.18
-ruby    2.7.6
-lua     5.4.4
-php     8.2.5
-erlang  25.3
-rust    1.69.0
-golang  1.20.3
-zig     0.10.1
-ocaml   5.0.0
-opam    2.1.5
+direnv 2.32.2
+java   oracle-17
+consul 1.14.3
+node   18.16.0
+python 3.10.11 2.7.18
+ruby   2.7.6
+lua    5.4.4
+php    8.2.5
+erlang 25.3
+rust   1.69.0
+go     1.20.3
+zig    0.10.1
+ocaml  5.0.0
+opam   2.1.5
+pnpm   7.33.5
