@@ -152,7 +152,9 @@ plugins=(
 # Plugin options
 
 zstyle :omz:plugins:ssh-agent lazy yes
+zstyle :omz:plugins:ssh-agent quiet yes
 zstyle :omz:plugins:ssh-agent lifetime 8h
+zstyle :omz:plugins:ssh-agent agent-forwarding yes
 
 function zvm_config() {
   ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
