@@ -168,6 +168,7 @@ source $ZSH/oh-my-zsh.sh
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^R'   _atuin_search
 
 # User configuration
 
