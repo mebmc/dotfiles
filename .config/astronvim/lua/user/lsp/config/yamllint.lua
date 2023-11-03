@@ -4,7 +4,7 @@ return {
             rules = {
                 indentation = {
                     spaces = "consistent"
-                }
+                },
             }
         }
     }
