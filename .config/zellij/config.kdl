@@ -121,9 +121,9 @@ keybinds {
     }
     tmux {
         bind "[" { SwitchToMode "Scroll"; }
-        bind "Alt f" { Write 2; SwitchToMode "Normal"; }
-        bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
-        bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "Ctrl f" { Write 2; SwitchToMode "Normal"; }
+        bind "\\" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "|" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "c" { NewTab; SwitchToMode "Normal"; }
         bind "," { SwitchToMode "RenameTab"; }
@@ -151,9 +151,24 @@ keybinds {
         bind "7" { GoToTab 7; SwitchToMode "Normal"; }
         bind "8" { GoToTab 8; SwitchToMode "Normal"; }
         bind "9" { GoToTab 9; SwitchToMode "Normal"; }
-        bind "q" { ToggleTab; }
-        bind "a" { ToggleTab; }
-        bind "Tab" { ToggleTab; }
+        bind "q" { ToggleTab; SwitchToMode "Normal"; }
+        bind "a" { ToggleTab; SwitchToMode "Normal"; }
+        bind "Tab" { ToggleTab; SwitchToMode "Normal"; }
+        bind "s" {
+            LaunchOrFocusPlugin "zellij:session-manager" {
+                floating true
+                move_to_focused_tab true
+            };
+            SwitchToMode "Normal"
+        }
+        bind "b" { BreakPane; SwitchToMode "Normal"; }
+        bind "]" { BreakPaneRight; SwitchToMode "Normal"; }
+        bind "[" { BreakPaneLeft; SwitchToMode "Normal"; }
+        bind "f" {
+            Run "zellij" "run" "--floating" "--close-on-exit" "--" "zellij-sessionizer" {
+                close_on_exit true;
+            };
+        }
     }
     shared_except "locked" {
         unbind "Alt c"
@@ -195,7 +210,7 @@ keybinds {
         bind "Alt w" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
-        bind "Alt f" { SwitchToMode "Tmux"; }
+        bind "Ctrl f" { SwitchToMode "Tmux"; }
     }
 }
 
