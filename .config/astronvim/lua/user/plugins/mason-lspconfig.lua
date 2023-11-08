@@ -13,7 +13,6 @@ return {
 	opts = {
 		automatic_installation = true,
 		ensure_installed = {
-			"awk_ls",
 			"bashls",
 			"cssls",
 			-- "docker_compose_language_service",
@@ -28,7 +27,7 @@ return {
 			"marksman",
 			"pyright",
 			"robotframework_ls",
-			-- "rome",
+			"biome",
 			"ruff_lsp",
 			"rust_analyzer",
 			"solidity",
