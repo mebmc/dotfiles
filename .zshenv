@@ -40,6 +40,13 @@ export FZF_DEFAULT_OPTS=" \
 
 export NODE_OPTIONS="--max-old-space-size=12288"
 
+# Mojo
+
+if [[ -d "$HOME/.modular" ]]; then
+  export MODULAR_HOME="$HOME/.modular"
+  export PATH="$HOME/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+fi
+
 # Extra
 
 export CC="/usr/bin/gcc"
