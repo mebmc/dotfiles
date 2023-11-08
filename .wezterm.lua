@@ -13,6 +13,19 @@ end
 -- This is where you actually apply your config choices
 config = {
   -- send_composed_key_when_alt_is_pressed = true,
+  window_close_confirmation = "NeverPrompt",
+  skip_close_confirmation_for_processes_named = {
+    'bash',
+    'sh',
+    'zsh',
+    'fish',
+    'tmux',
+    'zellij',
+    'nu',
+    'cmd.exe',
+    'pwsh.exe',
+    'powershell.exe',
+  },
 
   adjust_window_size_when_changing_font_size = false,
   automatically_reload_config = true,
