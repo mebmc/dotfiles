@@ -17,6 +17,8 @@ setopt INC_APPEND_HISTORY
 
 alias ca="c $HOME/.config/nvim"
 alias cv="c $HOME/.config/astronvim"
+alias reload="omz reload"
+alias colors="~/.scripts/colors.sh"
 
 ## Editor
 
@@ -98,6 +100,29 @@ alias aw="aws"
 alias j="just"
 alias tg="terragrunt"
 alias gl="glab"
+
+# alias ssh="ssh"
+alias ssm="aws ssm start-session --target"
+alias sso="aws sso login --no-browser"
+alias eks="aws eks update-kubeconfig --name"
+
+function profile () {
+  SELECTED_PROFILE=$( ( aws configure list-profiles && echo "[clear]" ) | fzf --prompt="Select AWS Profile: " --height="40%" --query="$1" )
+  if [[ "$SELECTED_PROFILE" != "" ]]; then
+    if [[ "$SELECTED_PROFILE" != '[clear]' ]]; then
+      export AWS_PROFILE="$SELECTED_PROFILE"
+    else
+      unset AWS_PROFILE
+    fi
+  fi
+}
+
+function cluster () {
+  SELECTED_CLUSTER=$( kubectl config get-contexts --no-headers -o name | fzf --prompt="Select Kubernetes Cluster: " --height="40%" --query="$1" )
+  if [[ "$SELECTED_CLUSTER" != "" ]]; then
+    kubectl config use-context "$SELECTED_CLUSTER"
+  fi
+}
 
 ## System
 
