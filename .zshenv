@@ -16,7 +16,7 @@ export LC_ALL="en_GB.UTF-8"
 # Base
 
 export EDITOR="nvim"
-export PAGER="less"
+export PAGER="bat --style=plain"
 
 # Secrets
 
