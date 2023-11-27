@@ -3,7 +3,26 @@
 local astro_utils = require("astronvim.utils")
 
 return {
+	v = {
+		["<C-x>"] = { "\"*d", desc = "Delete to system clipboard" },
+		["<C-c>"] = { "\"*y", desc = "Yank to system clipboard" },
+		["<C-v>"] = { "\"*p", desc = "Put from system clipboard" },
+		["<M-y>"] = { "\"*y", desc = "Yank to system clipboard" },
+		["<M-p>"] = { "\"*p", desc = "Put from system clipboard" },
+	},
+	i = {
+		["<C-x>"] = { "<esc>\"*dda", desc = "Delete to system clipboard" },
+		["<C-c>"] = { "<esc>\"*yya", desc = "Yank to system clipboard" },
+		["<C-v>"] = { "<esc>\"*pa", desc = "Put from system clipboard" },
+	},
 	n = {
+		-- copy and paste
+		["<C-x>"] = { "\"*d", desc = "Delete to system clipboard" },
+		["<C-c>"] = { "\"*y", desc = "Yank to system clipboard" },
+		["<C-v>"] = { "\"*p", desc = "Put from system clipboard" },
+		["<M-y>"] = { "\"*y", desc = "Yank to system clipboard" },
+		["<M-p>"] = { "\"*p", desc = "Put from system clipboard" },
+		-- telescope
 		["<C-o>"] = { "<cmd>Telescope oldfiles<cr>", desc = "Previous files" },
 		["<C-p>"] = { "<cmd>Telescope fd<cr>", desc = "Local files" },
 		-- second key is the lefthand side of the map
