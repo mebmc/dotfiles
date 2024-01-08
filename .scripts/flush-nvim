@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+NVIM=${NVIM_APPNAME:-nvim}
+
+mv "$HOME/.local/share/$NVIM" "$HOME/.local/share/$NVIM.bak"
+mv "$HOME/.local/state/$NVIM" "$HOME/.local/state/$NVIM.bak"
+mv "$HOME/.cache/$NVIM" "$HOME/.cache/$NVIM.bak"
+
