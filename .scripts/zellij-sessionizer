@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+
+# Reference:
+# https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+
+if [[ $# -eq 1 ]]; then
+    selected=$1
+else
+    selected=$( (zoxide query --list; find ~/git ~/work ~/projects ~/temp ~/.config ~/.local ~ -mindepth 1 -maxdepth 1 -type d) | awk '!x[$0]++' | fzf --prompt='  Zellij session  ' --border=none --exit-0 )
+fi
+
+if [[ -z $selected ]]; then
+    exit 0
+fi
+
+selected_name=$(basename "$selected" | tr . _)
+# zellij_running=$(pgrep zellij)
+
+
+# We're outside of zellij, so lets create a new session or attach to a new one.
+if [[ -z $ZELLIJ ]]; then
+	cd "$selected" || exit
+  
+  # -c will make zellij to either create a new session or to attach into an existing one
+	zellij attach "$selected_name" -c
+	exit 0
+fi
+
+# We're inside zellij so we'll open a new pane and move into the selected directory
+# zellij action new-pane
+zellij attach -c "$selected_name"
+
+# Hopefully they'll someday support specifying a directory and this won't be as laggy
+# thanks to @msirringhaus for getting this from the community some time ago!
+zellij action write-chars "cd $selected; clear" && zellij action write 10
+
+
+# if [[ -z $TMUX ]] && [[ -z $zellij_running ]]; then
+#     tmux new-session -s "$selected_name" -c "$selected"
+#     exit 0
+# fi
+#
+# if ! tmux has-session -t="$selected_name" 2> /dev/null; then
+#     tmux new-session -ds "$selected_name" -c "$selected"
+# fi
+#
+# tmux switch-client -t "$selected_name"
