@@ -106,8 +106,9 @@ alias ssm="aws ssm start-session --target"
 alias sso="aws sso login --no-browser"
 alias eks="aws eks update-kubeconfig --name"
 
+alias clear-profile="unset AWS_PROFILE"
 function profile () {
-  SELECTED_PROFILE=$( ( aws configure list-profiles && echo "[clear]" ) | fzf --prompt="Select AWS Profile: " --height="40%" --query="$1" )
+  SELECTED_PROFILE=$( ( aws configure list-profiles && echo "[clear]" ) | fzf --prompt="Select AWS Profile: " --height="40%" --query="$1" --select-1 )
   if [[ "$SELECTED_PROFILE" != "" ]]; then
     if [[ "$SELECTED_PROFILE" != '[clear]' ]]; then
       export AWS_PROFILE="$SELECTED_PROFILE"
@@ -118,7 +119,7 @@ function profile () {
 }
 
 function cluster () {
-  SELECTED_CLUSTER=$( kubectl config get-contexts --no-headers -o name | fzf --prompt="Select Kubernetes Cluster: " --height="40%" --query="$1" )
+  SELECTED_CLUSTER=$( kubectl config get-contexts --no-headers -o name | fzf --prompt="Select Kubernetes Cluster: " --height="40%" --query="$1" --select-1 )
   if [[ "$SELECTED_CLUSTER" != "" ]]; then
     kubectl config use-context "$SELECTED_CLUSTER"
   fi
