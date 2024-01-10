@@ -32,7 +32,7 @@ config = {
   color_scheme = 'Brogrammer',
 
   font = wezterm.font 'FiraCode Nerd Font',
-  font_size = 15,
+  font_size = 16,
   hide_tab_bar_if_only_one_tab = true,
 
   window_decorations = "RESIZE",
