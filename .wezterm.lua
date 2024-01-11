@@ -57,6 +57,11 @@ config = {
       mods = 'ALT',
       action = wezterm.action.SendKey { key = "#" }
     },
+    {
+      key = 'P',
+      mods = 'CTRL',
+      action = 'DisableDefaultAssignment'
+    }
   },
 }
 
