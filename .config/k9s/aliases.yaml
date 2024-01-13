@@ -1,0 +1,15 @@
+aliases:
+  pp: v1/pods
+  po: v1/pods
+  no: v1/nodes
+  jo: v1/jobs
+  dep: apps/v1/deployments
+  dp: apps/v1/deployments
+  sec: v1/secrets
+  bjo: batch/v1/jobs
+  cr: rbac.authorization.k8s.io/v1/clusterroles
+  crb: rbac.authorization.k8s.io/v1/clusterrolebindings
+  ro: rbac.authorization.k8s.io/v1/roles
+  rb: rbac.authorization.k8s.io/v1/rolebindings
+  np: networking.k8s.io/v1/networkpolicies
+
