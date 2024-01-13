@@ -223,7 +223,7 @@ function fill () {
 
 # Extra
 
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"
 eval "$(zoxide init --cmd c zsh)"
 eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
 bindkey '^R'   _atuin_search
