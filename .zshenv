@@ -60,6 +60,7 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 
 export NAVI_CONFIG="$HOME/.navi.yaml"
 
+export AICHAT_CONFIG_DIR="$HOME/.config/aichat"
 
 if [[ -f "$HOME/.zshenv_private" ]]; then
   source "$HOME/.zshenv_private"
