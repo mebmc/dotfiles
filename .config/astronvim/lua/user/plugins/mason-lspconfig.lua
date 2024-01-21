@@ -18,7 +18,6 @@ return {
 			-- "docker_compose_language_service",
 			"dockerls",
 			"gopls",
-			"gradle_ls",
 			"graphql",
 			-- "hls",
 			"html",
