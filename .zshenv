@@ -1,6 +1,6 @@
 # Add Nix and Brew to Path
 
-export PATH="$HOME/.nix-profile/bin:/opt/homebrew/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.nix-profile/bin:/opt/homebrew/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/mnt/c/Windows/System32/OpenSSH:$HOME/.local/bin:$HOME/.scripts:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.npm-packages:$HOME/.ghcup/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Locale
 
