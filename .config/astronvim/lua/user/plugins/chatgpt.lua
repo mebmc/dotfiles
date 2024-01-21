@@ -14,6 +14,19 @@ return {
         "ChatGPTRun",
         "ChatGPTRunCustomCode",
     },
+    keys = {
+        { "<leader>agt", "<cmd>ChatGPT<cr>", desc = " ChatGPT" },
+        { "<leader>aga", "<cmd>ChatGPTActAs<cr>", desc = " ChatGPT ActAs" },
+        { "<leader>agae", "<cmd>ChatGPTEditWithInstructions<cr>", desc = " ChatGPT EditWith" },
+        { "<leader>agc", "<cmd>ChatGPTCompleteCode<cr>", desc = " ChatGPT Complete" },
+        {
+            "<leader>ago",
+            function()
+                require("copilot.suggestion").toggle_auto_trigger()
+            end,
+            desc = " Copilot Auto Trigger",
+        },
+    },
     opts = {
         api_key_cmd = nil,
         yank_register = "+",
