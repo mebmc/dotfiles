@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ -d "/Applications/1Password.app/Contents/MacOS" ]]; then
+  /Applications/1Password.app/Contents/MacOS/op-ssh-sign "$@"
+elif [[ -d "/mnt/c/Users/ben/AppData/Local/1Password/app/8/" ]]; then
+  /mnt/c/Users/ben/AppData/Local/1Password/app/8/op-ssh-sign-wsl "$@"
+fi
