@@ -101,6 +101,17 @@ alias j="just"
 alias tg="terragrunt"
 alias gl="glab"
 
+alias cdk="npx cdk"
+alias cordova="npx cordova"
+alias expo="npx expo"
+alias expo-doctor="npx expo-doctor"
+alias pnpm="npx pnpm"
+alias projen="npx projen"
+alias react-native="npx react-native"
+alias tsc="npx tsc"
+alias turbo="npx turbo"
+alias wrangler="npx wrangler"
+
 # alias ssh="ssh"
 alias ssm="aws ssm start-session --target"
 alias sso="aws sso login --no-browser"
@@ -197,6 +208,12 @@ if hash yabai 2>/dev/null; then
   alias yabai-windows-full="yabai -m query --windows"
 fi
 
+# readers
+
+function hn() {
+  clx -c $(tput cols)
+}
+alias lob="neonmodem"
 
 # functions
 
