@@ -141,7 +141,6 @@ keybinds {
         bind "d" { Detach; }
         bind "Space" { NextSwapLayout; }
         bind "x" { CloseTab; SwitchToMode "Normal"; }
-        bind "e" { Run "nvim" "-c :Neotree" { direction "Down"; }; MoveFocus "Down"; SwitchToMode "Normal"; }
         bind "1" { GoToTab 1; SwitchToMode "Normal"; }
         bind "2" { GoToTab 2; SwitchToMode "Normal"; }
         bind "3" { GoToTab 3; SwitchToMode "Normal"; }
@@ -165,9 +164,29 @@ keybinds {
         bind "]" { BreakPaneRight; SwitchToMode "Normal"; }
         bind "[" { BreakPaneLeft; SwitchToMode "Normal"; }
         bind "f" {
+            SwitchToMode "Normal";
+            Run "zellij" "run" "--floating" "--close-on-exit" "--" "zellij-windowizer" {
+                close_on_exit true;
+            };
+        }
+        bind "Ctrl f" {
+            SwitchToMode "Normal";
             Run "zellij" "run" "--floating" "--close-on-exit" "--" "zellij-sessionizer" {
                 close_on_exit true;
             };
+        }
+        bind "Ctrl e" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "e" {
+            SwitchToMode "Normal";
+            Run "zellij" "run" "--floating" "--close-on-exit" "--" "zsh" {
+                close_on_exit true;
+            }
+        }
+        bind "u" {
+            SwitchToMode "Normal";
+            Run "zellij" "run" "--floating" "--close-on-exit" "--" "spt" {
+                close_on_exit true;
+            }
         }
     }
     shared_except "locked" {
@@ -185,7 +204,7 @@ keybinds {
         unbind "Ctrl b"
 
         bind "Alt g" { SwitchToMode "Locked"; }
-        bind "Alt e" { ToggleFloatingPanes; SwitchToMode "Normal"; }        
+        bind "Ctrl e" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "Ctrl q" { ToggleFloatingPanes; SwitchToMode "Normal"; }        
     }
     shared_except "normal" "locked" {
@@ -246,7 +265,7 @@ default_shell "zsh"
 //   - true (default)
 //   - false
 //
-pane_frames true
+pane_frames false
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -278,12 +297,12 @@ auto_layout true
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "default"
+theme "catppuccin-frappe"
 
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "_default"
+default_layout "default"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal

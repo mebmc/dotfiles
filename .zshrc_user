@@ -65,6 +65,25 @@ function ef() {
   fd -H --exclude=".git/" | fzf --query="$*" --prompt='   Edit File  ' --height=50 --layout=reverse --border --exit-0 --preview="head -n100 {}" | xargs nvim
 }
 
+## Lights
+
+function scene() {
+  openhue get scene -r $HUE_SCENE --json | jq '.[] | .Name' -r | sort | fzf --height=20% --layout=reverse --border --exit-0 | xargs -I {} openhue set scene -r $HUE_SCENE "{}"
+}
+
+function light() {
+  LIGHT_LEVEL=$(seq 100 -5 0 | fzf --height=20% --layout=reverse --border --exit-0)
+  if [[ "$LIGHT_LEVEL" -gt 0 ]]; then
+    openhue set light -r $HUE_SCENE fb4f24a2-6530-467d-8c19-f31e6ad2183a --on --brightness "$LIGHT_LEVEL"
+  else
+    openhue set light -r $HUE_SCENE fb4f24a2-6530-467d-8c19-f31e6ad2183a --off
+  fi
+}
+
+function light-off() {
+  openhue set light -r $HUE_SCENE fb4f24a2-6530-467d-8c19-f31e6ad2183a --off
+}
+
 ## Yadm
 
 alias y="yadm"
