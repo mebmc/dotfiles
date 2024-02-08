@@ -176,7 +176,7 @@ function fai () {
 
 ## Env
 
-function e1p () {
+function fetch_secrets () {
   cmd='op read "op://private/ZSH ENV/env"'
   cfg=$(eval $cmd)
   for i in $cfg; do
@@ -184,7 +184,7 @@ function e1p () {
   done > $HOME/.zshenv_private
 }
 if [[ ! -f $HOME/.zshenv_private ]]; then
-  e1p
+  fetch_secrets
   source $HOME/.zshenv_private
 fi
 
