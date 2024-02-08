@@ -28,11 +28,12 @@ fi
 
 # We're inside zellij so we'll open a new pane and move into the selected directory
 # zellij action new-pane
-zellij attach -c "$selected_name"
+# zellij attach -c "$selected_name"
+zellij action new-tab -c "$selected" -n "$selected_name" -l default
 
 # Hopefully they'll someday support specifying a directory and this won't be as laggy
 # thanks to @msirringhaus for getting this from the community some time ago!
-zellij action write-chars "cd $selected; clear" && zellij action write 10
+# zellij action write-chars "cd $selected; clear" && zellij action write 10
 
 
 # if [[ -z $TMUX ]] && [[ -z $zellij_running ]]; then
