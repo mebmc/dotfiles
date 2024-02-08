@@ -136,6 +136,15 @@ function cluster () {
   fi
 }
 
+function ports () {
+  echo $1
+  if [[ "$1" == "" ]]; then
+    lsof -i -nP | grep LISTEN
+  else
+    lsof -i -nP | grep LISTEN | grep "$1"
+  fi
+}
+
 ## System
 
 alias u="unistry"
