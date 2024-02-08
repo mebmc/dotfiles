@@ -22,7 +22,7 @@ alias colors="~/.scripts/colors.sh"
 
 ## Editor
 
-export NVIM_APPNAME="nvim-astro"
+export NVIM_APPNAME="nvim"
 
 alias e='nvim'
 alias et='nvim +":Neotree"'
@@ -30,10 +30,10 @@ alias es='nvim +":Neotree show" +":SessionManager load_current_dir_session"'
 alias ve='neovide'
 alias hex="hexyl"
 
-alias nvim-astro="NVIM_APPNAME=nvim-astro nvim"
-alias nvim-chad="NVIM_APPNAME=nvim-chad nvim"
-alias nvim-lazy="NVIM_APPNAME=nvim-lazy nvim"
-alias nvim-test="NVIM_APPNAME=nvim-test nvim"
+alias astro="NVIM_APPNAME=nvim-astro nvim"
+alias chad="NVIM_APPNAME=nvim-chad nvim"
+alias lazy="NVIM_APPNAME=nvim-lazy nvim"
+alias ks="NVIM_APPNAME=nvim nvim"
 
 function ea () {
   ( cd ~/.config/nvim && fd . | fzf --query="$*" --prompt='  Astronvim Config  ' --height=~50% --layout=reverse --border --exit-0 ) | xargs -I {} nvim $HOME/.config/nvim/{}
