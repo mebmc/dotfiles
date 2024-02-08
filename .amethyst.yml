@@ -15,7 +15,7 @@
 
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
-  - tall
+  # - tall
   - fullscreen
   - tall-right
   - wide
@@ -30,8 +30,8 @@ layouts:
   # - row
   # - floating
   # - widescreen-tall
-  - widescreen-tall-right
-  - bsp
+  # - widescreen-tall-right
+  # - bsp
 
 # First mod (default option + shift).
 mod1:
