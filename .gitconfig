@@ -8,6 +8,8 @@
     path = ~/.gitconfig_personal
 [includeIf "gitdir:~/.config/"]
     path = ~/.gitconfig_personal
+[includeIf "gitdir:~/.local/"]
+    path = ~/.gitconfig_personal
 [alias]
     co = checkout
     br = branch
@@ -53,6 +55,8 @@
     program = op-ssh-sign
     allowedSignersFile = ~/.config/git/allowed_signers
 [commit]
+    gpgsign = true
+[tag]
     gpgsign = true
 [interactive]
     diffFilter = delta --color-only
