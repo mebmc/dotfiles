@@ -8,8 +8,8 @@ return {
         "BackseatClearLine",
     },
     keys = {
-        { "<leader>ab", "<cmd>Backseat<cr>",    desc = "󱙺 Backseat" },
-        { "<leader>aB", "<cmd>BackseatAsk<cr>", desc = "󱙺 Backseat Ask" },
+        { "<leader>abb", "<cmd>Backseat<cr>", desc = "󱙺 Backseat" },
+        { "<leader>abB", "<cmd>BackseatAsk<cr>", desc = "󱙺 Backseat Ask" },
     },
     opts = {
         openai_model_id = 'gpt-3.5-turbo', --gpt-4 (If you do not have access to a model, it says "The model does not exist")

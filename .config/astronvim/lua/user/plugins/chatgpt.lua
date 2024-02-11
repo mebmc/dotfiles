@@ -15,10 +15,10 @@ return {
         "ChatGPTRunCustomCode",
     },
     keys = {
-        { "<leader>agt", "<cmd>ChatGPT<cr>", desc = " ChatGPT" },
-        { "<leader>aga", "<cmd>ChatGPTActAs<cr>", desc = " ChatGPT ActAs" },
-        { "<leader>agae", "<cmd>ChatGPTEditWithInstructions<cr>", desc = " ChatGPT EditWith" },
-        { "<leader>agc", "<cmd>ChatGPTCompleteCode<cr>", desc = " ChatGPT Complete" },
+        { "<leader>att", "<cmd>ChatGPT<cr>", desc = " ChatGPT toggle" },
+        { "<leader>ata", "<cmd>ChatGPTActAs<cr>", desc = " ChatGPT ActAs" },
+        { "<leader>atae", "<cmd>ChatGPTEditWithInstructions<cr>", desc = " ChatGPT EditWith" },
+        { "<leader>atc", "<cmd>ChatGPTCompleteCode<cr>", desc = " ChatGPT Complete" },
         {
             "<leader>ago",
             function()
@@ -41,7 +41,7 @@ return {
             },
         },
         chat = {
-            welcome_message = WELCOME_MESSAGE,
+            -- welcome_message = WELCOME_MESSAGE,
             loading_text = "Loading, please wait ...",
             question_sign = "",
             answer_sign = "ﮧ",

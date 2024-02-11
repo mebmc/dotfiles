@@ -5,6 +5,9 @@ return {
         "williamboman/mason.nvim",
         "mfussenegger/nvim-dap",
     },
+    events = {
+        "VeryLazy",
+    },
     opts = {
         automatic_installation = true,
         ensure_installed = {

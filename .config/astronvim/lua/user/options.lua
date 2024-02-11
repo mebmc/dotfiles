@@ -11,7 +11,8 @@ return {
         signcolumn     = "yes", -- sets vim.opt.signcolumn to auto
         wrap           = false, -- sets vim.opt.wrap
         list           = true,  -- show whitespace characters
-        clipboard      = ""     -- not using 'unnammedplus'
+        clipboard      = "",    -- not using 'unnammedplus'
+        conceallevel   = 2
     },
     g = {
         mapleader                  = " ",  -- sets vim.g.mapleader

@@ -1,4 +1,5 @@
 return {
     "folke/neoconf.nvim",
-    lazy = false
+    lazy = false,
+    opts = {},
 }

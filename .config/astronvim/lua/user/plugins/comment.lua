@@ -5,4 +5,5 @@ return {
         "BufReadPre",
         "BufNewFile"
     },
+    opts = {},
 }

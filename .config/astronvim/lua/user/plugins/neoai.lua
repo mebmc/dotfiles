@@ -18,8 +18,8 @@ return {
         "NeoAIInjectContextCode",
     },
     keys = {
-        { "<leader>as", desc = "󱙺 Summarize text" },
-        { "<leader>am", desc = "󱙺 Generate git message" },
+        { "<leader>ans", desc = "󱙺 Summarize text" },
+        { "<leader>anm", desc = "󱙺 Generate git message" },
     },
     config = function()
         require("neoai").setup({

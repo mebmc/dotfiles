@@ -5,7 +5,10 @@ return {
         dependencies = {
             'tpope/vim-repeat',
         },
-        lazy = false,
+        event = {
+            "BufReadPre",
+            "BufNewFile"
+        },
         config = function(_)
             require('leap').add_default_mappings()
         end,
@@ -16,6 +19,9 @@ return {
         dependencies = {
             "ggandor/leap.nvim",
         },
-        lazy = false,
+        event = {
+            "BufReadPre",
+            "BufNewFile"
+        },
     }
 }

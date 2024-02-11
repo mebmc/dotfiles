@@ -15,7 +15,7 @@ return {
     config = function()
         require("lsp_lines").setup()
 
-        require("lsp_lines").toggle() -- Comment to disable on startup
+        -- require("lsp_lines").toggle() -- Comment to disable on startup
         local previously = not require("lsp_lines").toggle()
 
         local group = vim.api.nvim_create_augroup("LspLinesToggleInsert", { clear = false })

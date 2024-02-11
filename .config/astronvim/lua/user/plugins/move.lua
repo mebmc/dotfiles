@@ -8,18 +8,21 @@ return {
         "MoveBlock",
         "MoveHBlock"
     },
-    lazy = false,
+    event = {
+        "BufReadPre",
+        "BufNewFile"
+    },
     keys = {
-        { "<A-j>",      "<cmd>MoveLine(1)<CR>",    mode = "n" },
-        { "<A-k>",      "<cmd>MoveLine(-1)<CR>",   mode = "n" },
-        { "<A-h>",      "<cmd>MoveHChar(-1)<CR>",  mode = "n" },
-        { "<A-l>",      "<cmd>MoveHChar(1)<CR>",   mode = "n" },
+        { "<A-S-j>",    "<cmd>MoveLine(1)<CR>",    mode = "n" },
+        { "<A-S-k>",    "<cmd>MoveLine(-1)<CR>",   mode = "n" },
+        { "<A-S-h>",    "<cmd>MoveHChar(-1)<CR>",  mode = "n" },
+        { "<A-S-l>",    "<cmd>MoveHChar(1)<CR>",   mode = "n" },
         { "<leader>wf", "<cmd>MoveWord(1)<CR>",    mode = "x" },
         { "<leader>wb", "<cmd>MoveWord(-1)<CR>",   mode = "x" },
-        { "<A-j>",      "<cmd>MoveBlock(1)<CR>",   mode = "v" },
-        { "<A-k>",      "<cmd>MoveBlock(-1)<CR>",  mode = "v" },
-        { "<A-h>",      "<cmd>MoveHBlock(-1)<CR>", mode = "v" },
-        { "<A-l>",      "<cmd>MoveHBlock(1)<CR>",  mode = "v" },
+        { "<A-S-j>",    "<cmd>MoveBlock(1)<CR>",   mode = "v" },
+        { "<A-S-k>",    "<cmd>MoveBlock(-1)<CR>",  mode = "v" },
+        { "<A-S-h>",    "<cmd>MoveHBlock(-1)<CR>", mode = "v" },
+        { "<A-S-l>",    "<cmd>MoveHBlock(1)<CR>",  mode = "v" },
     }
 }
 

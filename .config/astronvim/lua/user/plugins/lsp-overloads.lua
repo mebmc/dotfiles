@@ -6,7 +6,8 @@ return {
         "ray-x/lsp_signature.nvim",
     },
     event = {
-        "BufReadPre",
-        "BufNewFile"
+        "VeryLazy",
+        -- "BufReadPre",
+        -- "BufNewFile"
     },
 }

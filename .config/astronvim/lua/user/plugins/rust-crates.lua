@@ -18,10 +18,10 @@ return {
 
         -- Crates mappings:
         local map = vim.api.nvim_set_keymap
-        map("n", "<leader>cCt", ":lua require('crates').toggle()<cr>", { desc = "Toggle extra crates.io information" })
-        map("n", "<leader>cCr", ":lua require('crates').reload()<cr>", { desc = "Reload information from crates.io" })
-        map("n", "<leader>cCU", ":lua require('crates').upgrade_crate()<cr>", { desc = "Upgrade a crate" })
-        map("v", "<leader>cCU", ":lua require('crates').upgrade_crates()<cr>", { desc = "Upgrade selected crates" })
-        map("n", "<leader>cCA", ":lua require('crates').upgrade_all_crates()<cr>", { desc = "Upgrade all crates" })
+        map("n", "<leader>lCt", ":lua require('crates').toggle()<cr>", { desc = "Toggle extra crates.io information" })
+        map("n", "<leader>lCr", ":lua require('crates').reload()<cr>", { desc = "Reload information from crates.io" })
+        map("n", "<leader>lCU", ":lua require('crates').upgrade_crate()<cr>", { desc = "Upgrade a crate" })
+        map("v", "<leader>lCU", ":lua require('crates').upgrade_crates()<cr>", { desc = "Upgrade selected crates" })
+        map("n", "<leader>lCA", ":lua require('crates').upgrade_all_crates()<cr>", { desc = "Upgrade all crates" })
     end,
 }
