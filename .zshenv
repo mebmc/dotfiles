@@ -66,3 +66,10 @@ if [[ -f "$HOME/.zshenv_private" ]]; then
   source "$HOME/.zshenv_private"
 fi
 
+if [[ -f "$HOME/.zshenv_personal" ]]; then
+  source "$HOME/.zshenv_personal"
+fi
+
+if [[ -f "$HOME/.zshenv_work" ]]; then
+  source "$HOME/.zshenv_work"
+fi
