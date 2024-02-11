@@ -117,6 +117,8 @@ alias ap="ansible-playbook"
 alias ansible-vault="ANSIBLE_VERBOSITY=0 ansible-vault"
 alias aw="aws"
 alias j="just"
+alias tf="terraform"
+alias wtf="wrapped-terraform"
 alias tg="terragrunt"
 alias gl="glab"
 
