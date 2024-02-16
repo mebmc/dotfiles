@@ -98,7 +98,7 @@ function ye () {
 
 # Tmux
 
-alias tmux="tmux new -A -s gen"
+alias attach="tmux new -A -s gen"
 
 ## Zellij
 
