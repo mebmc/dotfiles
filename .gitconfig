@@ -44,6 +44,8 @@
 [push]
     followtags = true
     autoSetupRemote = true
+[status]
+	submoduleSummary = true
 [filter "lfs"]
     process = git-lfs filter-process
     required = true
@@ -56,6 +58,7 @@
     allowedSignersFile = ~/.config/git/allowed_signers
 [commit]
     gpgsign = true
+    verbose = true
 [tag]
     gpgsign = true
 [interactive]
@@ -65,9 +68,11 @@
     light = false
     side-by-side = true
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 [diff]
     colorMoved = default
+    algorithm = histogram
+    submodules = log
 [color]
     ui = true
 [color "diff-highlight"]
@@ -75,3 +80,21 @@
     oldHighlight = red bold 52
     newNormal = green bold
     newHighlight = green bold 22
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
+[rerere]
+    enabled = true
+[submodule]
+    recurse = true
+[transfer]
+    fsckobjects = true
+[fetch]
+    fsckobjects = true
+[receive]
+    fsckObjects = true
+[log]
+    date = iso
+[oh-my-zsh]
+    hide-info = 1
