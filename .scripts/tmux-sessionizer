@@ -6,7 +6,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$( (zoxide query --list | grep "$HOME"; find ~/git ~/work ~/projects ~/temp ~/.config ~/.local ~ -mindepth 1 -maxdepth 1 -type d) | sed "s|$HOME|~|g" | awk '!x[$0]++' | fzf --prompt='  Tmux window  ' --border=none --exit-0 | sed "s|~|$HOME|g")
+    selected=$( (zoxide query --list --score | grep "$HOME";) | sed "s|$HOME|~|g" | awk '!x[$0]++' | fzf --scheme history --prompt='  Tmux window  ' --border=none --exit-0 | sed "s|~|$HOME|g" | awk '{ print $2 }')
 fi
 
 if [[ -z $selected ]]; then
