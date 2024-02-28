@@ -117,14 +117,12 @@
 # ]
 
 # hyper - t : open -na /Applications/Alacritty.app
-
-hyper - t : open -na /Applications/Alacritty.app
-hyper - s : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Safari")) | .[0].id')
-hyper - d : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Alacritty")) | .[0].id')
-hyper - f : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Firefox")) | .[0].id')
-hyper - c : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Microsoft Teams")) | .[0].id')
-hyper - b : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Brave")) | .[0].id')
-hyper - m : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Music")) | .[0].id')
+# hyper - s : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Safari")) | .[0].id')
+# hyper - d : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Alacritty")) | .[0].id')
+# hyper - f : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Firefox")) | .[0].id')
+# hyper - c : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Microsoft Teams")) | .[0].id')
+# hyper - b : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Brave")) | .[0].id')
+# hyper - m : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Music")) | .[0].id')
 
 ctrl - u [
         "Fiery Feeds" : skhd -k 'pageup'
@@ -146,38 +144,44 @@ hyper - j : yabai -m window --focus stack.next || yabai -m window --focus south
 hyper - k : yabai -m window --focus stack.prev || yabai -m window --focus north
 
 # move managed window
-shift + cmd - h : yabai -m window --warp west || yabai -m window --display west
-shift + cmd - l : yabai -m window --warp east || yabai -m window --display east
-shift + cmd - j : yabai -m window --warp south 
-shift + cmd - k : yabai -m window --warp north
+meh - h : yabai -m window --warp west || yabai -m window --display west
+meh - l : yabai -m window --warp east || yabai -m window --display east
+meh - j : yabai -m window --warp south 
+meh - k : yabai -m window --warp north
+
+# displays
+hyper - w: yabai -m display --focus west
+hyper - e: yabai -m display --focus east
+meh - w: yabai -m window --display west
+meh - e: yabai -m window --display east
 
 # spaces
-cmd + ctrl - 1 : yabai -m space --focus 1 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + ctrl - 2 : yabai -m space --focus 2 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + ctrl - 3 : yabai -m space --focus 3 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + ctrl - 4 : yabai -m space --focus 4 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + ctrl - 5 : yabai -m space --focus 5 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + ctrl - 6 : yabai -m space --focus 6 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + ctrl - 7 : yabai -m space --focus 7 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + ctrl - 8 : yabai -m space --focus 8 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + ctrl - 9 : yabai -m space --focus 9 || yabai -m space --focus recent; sketchybar --trigger window_focus
-cmd + ctrl - 0 : yabai -m space --focus 10 || yabai -m space --focus recent; sketchybar --trigger window_focus
+# hyper - 1 : yabai -m space --focus 1 || yabai -m space --focus recent; sketchybar --trigger window_focus
+# hyper - 2 : yabai -m space --focus 2 || yabai -m space --focus recent; sketchybar --trigger window_focus
+# hyper - 3 : yabai -m space --focus 3 || yabai -m space --focus recent; sketchybar --trigger window_focus
+# hyper - 4 : yabai -m space --focus 4 || yabai -m space --focus recent; sketchybar --trigger window_focus
+# hyper - 5 : yabai -m space --focus 5 || yabai -m space --focus recent; sketchybar --trigger window_focus
+# hyper - 6 : yabai -m space --focus 6 || yabai -m space --focus recent; sketchybar --trigger window_focus
+# hyper - 7 : yabai -m space --focus 7 || yabai -m space --focus recent; sketchybar --trigger window_focus
+# hyper - 8 : yabai -m space --focus 8 || yabai -m space --focus recent; sketchybar --trigger window_focus
+# hyper - 9 : yabai -m space --focus 9 || yabai -m space --focus recent; sketchybar --trigger window_focus
+# hyper - 0 : yabai -m space --focus 10 || yabai -m space --focus recent; sketchybar --trigger window_focus
 
 # send window to desktop and follow focus
-shift + cmd - 1 : yabai -m window --space 1 && sketchybar --trigger windows_on_spaces
-shift + cmd - 2 : yabai -m window --space 2 && sketchybar --trigger windows_on_spaces
-shift + cmd - 3 : yabai -m window --space 3 && sketchybar --trigger windows_on_spaces
-shift + cmd - 4 : yabai -m window --space 4 && sketchybar --trigger windows_on_spaces
-shift + cmd - 5 : yabai -m window --space 5 && sketchybar --trigger windows_on_spaces
-shift + cmd - 6 : yabai -m window --space 6 && sketchybar --trigger windows_on_spaces
-shift + cmd - 7 : yabai -m window --space 7 && sketchybar --trigger windows_on_spaces
-shift + cmd - 8 : yabai -m window --space 8 && sketchybar --trigger windows_on_spaces
-shift + cmd - 9 : yabai -m window --space 9 && sketchybar --trigger windows_on_spaces
-shift + cmd - 0 : yabai -m window --space 10 && sketchybar --trigger windows_on_spaces
+meh - 1 : yabai -m window --space 1 && sketchybar --trigger windows_on_spaces
+meh - 2 : yabai -m window --space 2 && sketchybar --trigger windows_on_spaces
+meh - 3 : yabai -m window --space 3 && sketchybar --trigger windows_on_spaces
+meh - 4 : yabai -m window --space 4 && sketchybar --trigger windows_on_spaces
+meh - 5 : yabai -m window --space 5 && sketchybar --trigger windows_on_spaces
+meh - 6 : yabai -m window --space 6 && sketchybar --trigger windows_on_spaces
+meh - 7 : yabai -m window --space 7 && sketchybar --trigger windows_on_spaces
+meh - 8 : yabai -m window --space 8 && sketchybar --trigger windows_on_spaces
+meh - 9 : yabai -m window --space 9 && sketchybar --trigger windows_on_spaces
+meh - 0 : yabai -m window --space 10 && sketchybar --trigger windows_on_spaces
 
-cmd - q : yabai -m window --minimize
-cmd - w : yabai -m window --deminimize
-cmd + shift - q : yabai -m window --close # && yabai -m window --focus south
+hyper - q : yabai -m window --minimize && yabai -m window --focus south
+hyper - w : yabai -m window --deminimize
+hyper + shift - q : yabai -m window --close # && yabai -m window --focus south
 
 # Set insertion point for focused container
 shift + lctrl + cmd - h : yabai -m window --insert west
@@ -188,39 +192,39 @@ shift + lctrl + cmd - l : yabai -m window --insert east
 # toggle window zoom
 # alt - d : yabai -m window --toggle zoom-parent
 # toggle fullscreen
-cmd + ctrl - f : yabai -m window --toggle zoom-fullscreen
-cmd + ctrl + alt - f : yabai -m window --toggle native-fullscreen
+hyper - f : yabai -m window --toggle zoom-fullscreen
+meh - g : yabai -m window --toggle native-fullscreen
 
 # toggle window split type
-cmd + ctrl - e : yabai -m window --toggle split
+hyper - s : yabai -m window --toggle split
 
 # float / unfloat window and center on screen
-cmd + ctrl + shift - f : yabai -m window --toggle float;\
+hyper - t : yabai -m window --toggle float;\
           yabai -m window --grid 4:4:1:1:2:2
 
 # toggle sticky(+float), topmost, picture-in-picture
-cmd + alt - p : yabai -m window --toggle sticky;\
+hyper - p : yabai -m window --toggle sticky;\
            yabai -m window --toggle topmost;\
            yabai -m window --toggle pip
 
 
 # Restart yabai
-cmd + ctrl - r : /usr/bin/env osascript <<< \
+meh - z : /usr/bin/env osascript <<< \
         "display notification \"Restarting Yabai\" with title \"Yabai\""; \
         launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # Stacking windows
-cmd + shift - w : yabai -m window --stack east || yabai -m window --stack west
-cmd + shift - e : yabai -m config layout bsp
-# cmd - e : yabai -m window --stack south || yabai -m window --stack north
+hyper - g : yabai -m window --stack east || yabai -m window --stack west
+hyper - b : yabai -m window --stack south || yabai -m window --stack north
+hyper - d : yabai -m config layout bsp
 
 
 # Resize windows
-alt + cmd - h : yabai -m window --resize left:-100:0; \
+meh - left : yabai -m window --resize left:-100:0; \
                   yabai -m window --resize right:-100:0
-alt + cmd - j : yabai -m window --resize bottom:0:100; \
+meh - down : yabai -m window --resize bottom:0:100; \
                   yabai -m window --resize top:0:100
-alt + cmd - k : yabai -m window --resize top:0:-100; \
+meh - up : yabai -m window --resize top:0:-100; \
                   yabai -m window --resize bottom:0:-100
-alt + cmd - l : yabai -m window --resize right:100:0; \
+meh - right : yabai -m window --resize right:100:0; \
                   yabai -m window --resize left:100:0
