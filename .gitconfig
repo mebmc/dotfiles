@@ -81,7 +81,7 @@
     newNormal = green bold
     newHighlight = green bold 22
 [column]
-    ui = auto
+    ui = never
 [branch]
     sort = -committerdate
 [rerere]
@@ -98,3 +98,5 @@
     date = iso
 [oh-my-zsh]
     hide-info = 1
+[diff "ansible-vault"]
+	textconv = ansible-vault view
