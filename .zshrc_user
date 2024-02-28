@@ -138,6 +138,11 @@ alias ssm="aws ssm start-session --target"
 alias sso="aws sso login --no-browser"
 alias eks="aws eks update-kubeconfig --name"
 
+function wt () {
+  SELECTED_TREE=$( ( git worktree list | grep -v "\.bare" ) | fzf --prompt="Select Git worktree: " --height="40%" --layout=reverse --query="$1" --select-1 | awk '{print $1}' )
+  cd $SELECTED_TREE
+}
+
 alias clear-profile="unset AWS_PROFILE"
 function profile () {
   SELECTED_PROFILE=$( ( aws configure list-profiles && echo "[clear]" ) | fzf --prompt="Select AWS Profile: " --height="40%" --query="$1" --select-1 )
