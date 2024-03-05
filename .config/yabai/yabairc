@@ -51,15 +51,15 @@ yabai -m config normal_window_border_color   0xff555555
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  10
-yabai -m config bottom_padding               10
-yabai -m config left_padding                 10
-yabai -m config right_padding                10
-yabai -m config window_gap                   10
+yabai -m config top_padding                  15
+yabai -m config bottom_padding               15
+yabai -m config left_padding                 15
+yabai -m config right_padding                15
+yabai -m config window_gap                   15
 
 # Set padding for spacebar
-yabai -m config external_bar all:0:0
-# yabai -m config external_bar all:27:0
+# yabai -m config external_bar all:0:0
+yabai -m config external_bar all:27:0
 
 # label spaces
 yabai -m space 1 --label 1
