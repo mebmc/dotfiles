@@ -211,7 +211,7 @@ hyper - p : yabai -m window --toggle sticky;\
 # Restart yabai
 meh - z : /usr/bin/env osascript <<< \
         "display notification \"Restarting Yabai\" with title \"Yabai\""; \
-        launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+        yabai --restart-service
 
 # Stacking windows
 hyper - g : yabai -m window --stack east || yabai -m window --stack west
