@@ -49,6 +49,10 @@ yabai -m config window_border_radius         0
 yabai -m config active_window_border_color   0xff51afef  # doom-one blue
 yabai -m config normal_window_border_color   0xff555555
 
+# Set padding for spacebar
+# yabai -m config external_bar all:0:0
+yabai -m config external_bar all:27:0
+
 # general space settings
 yabai -m config layout                       bsp
 yabai -m config top_padding                  15
@@ -56,10 +60,6 @@ yabai -m config bottom_padding               15
 yabai -m config left_padding                 15
 yabai -m config right_padding                15
 yabai -m config window_gap                   15
-
-# Set padding for spacebar
-# yabai -m config external_bar all:0:0
-yabai -m config external_bar all:27:0
 
 # label spaces
 yabai -m space 1 --label 1
@@ -80,34 +80,45 @@ yabai -m space 15 --label 15
 
 # window rules
 
+yabai -m rule --add app="^1Password$" manage=on space=5
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Alacritty$" manage=on
+yabai -m rule --add app="^Calendar$" manage=on space=4
+yabai -m rule --add app="^Discord$" manage=on space=8
 yabai -m rule --add app="^Docker Desktop$" manage=off
+yabai -m rule --add app="^Firefox Developer Edition$" manage=on space=1
+yabai -m rule --add app="^Firefox$" manage=on
 yabai -m rule --add app="^Firefox$" title="^Extension.*" manage=off
+yabai -m rule --add app="^Microsoft Outlook$" manage=on space=3
 yabai -m rule --add app="^Microsoft Remote Desktop$" manage=off
-yabai -m rule --add app="^Microsoft Teams$" manage=on
+yabai -m rule --add app="^Microsoft Teams$" manage=on space=2
 yabai -m rule --add app="^OpenIn$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
+yabai -m rule --add app="^Spotify$" manage=on space=6
+yabai -m rule --add app="^Steam Helper$" title="^Steam$" manage=on space=9
+yabai -m rule --add app="^Steam Helper$" title="^Special Offers$" manage=off space=9
+yabai -m rule --add app="^Telegram$" manage=on space=7
 yabai -m rule --add app="^Unity$" title="^Tutorials$" manage-off
+yabai -m rule --add app="^kitty$" manage=on space=1
 
 # float settings windows
-yabai -m rule --add app='^Finder$' manage=off sticky=off
-yabai -m rule --add app='^System Settings$' manage=off sticky=on 
-yabai -m rule --add app="^System Preferences$" manage=off 
-yabai -m rule --add app="^System Information$" manage=off 
-yabai -m rule --add title="^Preferences$" manage=off
-yabai -m rule --add title="^Digital Colour Meter$" manage=off 
-yabai -m rule --add title="^General.*" manage=off   # Calendar settings
-yabai -m rule --add title="^Quick Entry.*" manage=off   # Things 3 settings
-yabai -m rule --add title="^Accounts.*" manage=off   # MacOS Mail accounts
-yabai -m rule --add title="^Run/Debug Configurations.*" manage=off   # PyCharm
-yabai -m rule --add title="^Disk Utility$" manage=off   # MacOS Disk utility
 yabai -m rule --add app="^App Store$" manage=off   # MacOS App Store
-yabai -m rule --add app="^Signal$" manage=off   # Signal
 yabai -m rule --add app="^Messages$" manage=off   # Messages
-yabai -m rule --add app="^WhatsApp$" manage=off   # WhatsApp
 yabai -m rule --add app="^NordVPN$" manage=off   # NordVPN
 yabai -m rule --add app="^Notes$" manage=off   # Apple Notes
+yabai -m rule --add app="^Signal$" manage=off   # Signal
+yabai -m rule --add app="^System Information$" manage=off 
+yabai -m rule --add app="^System Preferences$" manage=off 
+yabai -m rule --add app="^WhatsApp$" manage=off   # WhatsApp
+yabai -m rule --add app='^Finder$' manage=off sticky=off
+yabai -m rule --add app='^System Settings$' manage=off sticky=on 
+yabai -m rule --add title="^Accounts.*" manage=off   # MacOS Mail accounts
+yabai -m rule --add title="^Digital Colour Meter$" manage=off 
+yabai -m rule --add title="^Disk Utility$" manage=off   # MacOS Disk utility
+yabai -m rule --add title="^General.*" manage=off   # Calendar settings
+yabai -m rule --add title="^Preferences$" manage=off
+yabai -m rule --add title="^Quick Entry.*" manage=off   # Things 3 settings
+yabai -m rule --add title="^Run/Debug Configurations.*" manage=off   # PyCharm
 
 # Focus window to mous when windows/application is destroyed
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
