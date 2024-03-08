@@ -68,11 +68,11 @@ function ef() {
 ## Lights
 
 function scene() {
-  openhue get scene -r $HUE_SCENE --json | jq '.[] | .Name' -r | sort | fzf --height=20% --layout=reverse --border --exit-0 | xargs -I {} openhue set scene -r $HUE_SCENE "{}"
+  openhue get scene -r $HUE_SCENE --json | jq '.[] | .Name' -r | sort | fzf --height=20% --layout=reverse --query="$1" --border --exit-0 | xargs -I {} openhue set scene -r $HUE_SCENE "{}"
 }
 
 function light() {
-  LIGHT_LEVEL=$(seq 100 -5 0 | fzf --height=20% --layout=reverse --border --exit-0)
+  LIGHT_LEVEL=$(seq 100 -5 0 | fzf --height=20% --layout=reverse --query="$1" --border --exit-0)
   if [[ "$LIGHT_LEVEL" -gt 0 ]]; then
     openhue set light -r $HUE_SCENE fb4f24a2-6530-467d-8c19-f31e6ad2183a --on --brightness "$LIGHT_LEVEL"
   else
