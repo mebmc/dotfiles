@@ -52,3 +52,31 @@ autocmd DocStart mail.google.com mode ignore
 " Sometimes the status bar in the bottom left corner overlaps the Tridactyl
 " command line, so set an option to move the status bar to the right.
 guiset_quiet hoverlink right
+
+set searchurls.ansible https://docs.ansible.com/ansible/latest/index.html#stq=%s&stp=1
+set searchurls.amo https://addons.mozilla.org/zh-TW/firefox/search/?q=
+set searchurls.archive https://web.archive.org/web/*/%s
+set searchurls.bugz https://bugzilla.mozilla.org/show_bug.cgi?id=
+set searchurls.cache http://www.cachedpages.com/cached/page.asp?url=%s
+set searchurls.cargo https://crates.io/search?q=%s
+set searchurls.d https://duckduckgo.com/?q=
+set searchurls.emoji https://emojipedia.org/search/?q=
+set searchurls.fdroid https://search.f-droid.org/?q=
+set searchurls.feedly https://feedly.com/i/discover/sources/search/feed/%s
+set searchurls.g https://www.google.com/search?q=
+set searchurls.go https://pkg.go.dev/search?q=%s
+set searchurls.map https://www.google.com/maps/search/%s
+set searchurls.mdn https://developer.mozilla.org/zh-TW/search?q=%s&locale=zh-TW&locale=en-US
+set searchurls.ms https://support.microsoft.com/en-us/Search/results?query=
+set searchurls.node https://nodejs.org/dist/latest/docs/api/
+set searchurls.npm https://www.npmjs.com/package/
+set searchurls.npms https://www.npmjs.com/search?q=
+set searchurls.play https://play.google.com/store/search?q=
+set searchurls.port https://www.speedguide.net/port.php?port=%s
+set searchurls.ports https://www.speedguide.net/ports.php?filter=%s
+set searchurls.pypi https://pypi.org/search/?q=%s
+set searchurls.rfc https://datatracker.ietf.org/doc/html/rfc%s
+set searchurls.steam https://store.steampowered.com/search/?term=
+set searchurls.wd https://www.wordnik.com/words/%s
+set searchurls.yc https://news.ycombinator.com/item?id=
+set searchurls.yt https://www.youtube.com/results?search_query=
