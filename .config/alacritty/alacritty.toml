@@ -1,0 +1,252 @@
+import = ["/Users/bmc/.config/alacritty/**/*.yml"]
+ipc_socket = true
+live_config_reload = true
+working_directory = "None"
+
+[bell]
+animation = "EaseOutExpo"
+color = "#ffffff"
+command = "None"
+duration = 0
+
+[colors]
+draw_bold_text_with_bright_colors = false
+transparent_background_colors = true
+
+[colors.bright]
+black = "#dee1e9"
+blue = "#0094dd"
+cyan = "#0091e1"
+green = "#07d673"
+magenta = "#6667c5"
+red = "#e64b3b"
+white = "#fffefe"
+yellow = "#f6c600"
+
+[colors.cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[colors.dim]
+black = "#131415"
+blue = "#3397da"
+cyan = "#0094dd"
+green = "#2fcb70"
+magenta = "#6170c3"
+red = "#fb2c1e"
+white = "#dee1e9"
+yellow = "#f1c30d"
+
+[colors.footer_bar]
+background = "#c5c8c6"
+foreground = "#1d1f21"
+
+[colors.hints.end]
+background = "#1d1f21"
+foreground = "#e9ff5e"
+
+[colors.hints.start]
+background = "#e9ff5e"
+foreground = "#1d1f21"
+
+[colors.line_indicator]
+background = "None"
+foreground = "None"
+
+[colors.normal]
+black = "#2a2929"
+blue = "#3397da"
+cyan = "#0094dd"
+green = "#2fcb70"
+magenta = "#6170c3"
+red = "#fb2c1e"
+white = "#dee1e9"
+yellow = "#f1c30d"
+
+[colors.primary]
+background = "#090808"
+bright_foreground = "#eaeaea"
+dim_foreground = "#828482"
+foreground = "#dee1e9"
+
+[colors.search.focused_match]
+background = "#000000"
+foreground = "#ffffff"
+
+[colors.search.matches]
+background = "#ffffff"
+foreground = "#000000"
+
+[colors.selection]
+background = "CellForeground"
+text = "CellBackground"
+
+[colors.vi_mode_cursor]
+cursor = "CellForeground"
+text = "CellBackground"
+
+[cursor]
+blink_interval = 750
+blink_timeout = 5
+thickness = 0.15
+unfocused_hollow = true
+vi_mode_style = "Block"
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[debug]
+highlight_damage = false
+log_level = "Warn"
+persistent_logging = false
+print_events = false
+render_timer = false
+
+[env]
+TERM = "alacritty"
+
+[font]
+builtin_box_drawing = false
+size = 18.0
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Retina"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Retina"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Retina"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Retina"
+
+[font.offset]
+x = 0
+y = 0
+
+[hints]
+alphabet = "jfkdls;ahgurieowpq"
+
+[[hints.enabled]]
+command = "open"
+hyperlinks = true
+post_processing = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+
+[hints.enabled.binding]
+key = "U"
+mods = "Control|Shift"
+
+[hints.enabled.mouse]
+enabled = true
+mods = "None"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Command|Shift"
+
+[[keyboard.bindings]]
+chars = "#"
+key = "Key3"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = " "
+key = "Space"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "N"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "I"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Escape"
+mode = "Vi"
+
+[[keyboard.bindings]]
+action = "Open"
+key = "O"
+mode = "Vi"
+
+[mouse]
+hide_when_typing = false
+
+[[mouse.bindings]]
+action = "ExpandSelection"
+mouse = "Right"
+
+[[mouse.bindings]]
+action = "ExpandSelection"
+mods = "Control"
+mouse = "Right"
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mode = "~Vi"
+mouse = "Middle"
+
+# [mouse.double_click]
+# threshold = 300
+
+# [mouse.triple_click]
+# threshold = 300
+
+[scrolling]
+history = 100000
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+decorations = "none"
+decorations_theme_variant = "None"
+dynamic_padding = true
+dynamic_title = false
+opacity = 0.95
+option_as_alt = "Both"
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 160
+lines = 65
+
+[window.padding]
+x = 0
+y = 0
+
+[window.position]
+x = 0
+y = 0
