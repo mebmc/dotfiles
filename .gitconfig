@@ -39,12 +39,11 @@
     new = green bold
 [pull]
     rebase = false
-	autoSetupRemote = true
+    autoSetupRemote = true
 [init]
     defaultBranch = master
 [push]
     followtags = true
-    autoSetupRemote = true
     autoSetupRemote = true
 [status]
     submoduleSummary = true
@@ -86,7 +85,7 @@
     ui = never
 [branch]
     sort = -committerdate
-    autoSetupMerge = always
+    ; autoSetupMerge = always
 [rerere]
     enabled = true
 [submodule]
