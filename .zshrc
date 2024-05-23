@@ -88,12 +88,15 @@ HISTFILE=~/.zsh_history
 SAVEHIST=20000
 HISTDUP=erase
 setopt appendhistory
+setopt extendedhistory
 # setopt sharehistory
+setopt inc_append_history
 setopt hist_ignore_space
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+setopt hist_reduce_blanks
 
 # Completion settings
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
