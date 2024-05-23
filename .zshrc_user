@@ -1,23 +1,9 @@
 # ZSH User
 
-# Custom completions
-
-fpath=($HOME/.completions.d $HOME/.zsh-completions.git/src $fpath)
-
-# Debug
-
-zmodload zsh/zprof
-
-# History
-
-unsetopt SHARE_HISTORY
-setopt INC_APPEND_HISTORY
-
 # Aliases and functions
 
 alias ca="c $HOME/.config/nvim"
 alias cv="c $HOME/.config/astronvim"
-alias reload="omz reload"
 alias colors="~/.scripts/colors.sh"
 
 ## Editor
@@ -135,7 +121,7 @@ alias wrangler="npx wrangler"
 
 # alias ssh="ssh"
 alias ssm="aws ssm start-session --target"
-alias sso="aws sso login --no-browser"
+alias sso="AWS_PROFILE=work-live aws sso login"
 alias eks="aws eks update-kubeconfig --name"
 
 function worktree () {
@@ -274,12 +260,9 @@ function fill () {
   for i in $(seq 1 $TERM_HEIGHT); do echo; done
 }
 
-# Extra
-
-eval "$(mise activate zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
-bindkey '^R'   _atuin_search
+function lines() {
+  for i in $(seq 0 150); do echo; done
+}
 
 # Disable alacritty dock bouncing https://github.com/alacritty/alacritty/issues/2950
 printf "\e[?1042l"
