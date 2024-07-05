@@ -146,7 +146,7 @@ alt + lctrl + cmd - k : yabai -m window --focus stack.prev || yabai -m window --
 # move managed window
 meh - h : yabai -m window --warp west || yabai -m window --display west
 meh - l : yabai -m window --warp east || yabai -m window --display east
-meh - j : yabai -m window --warp south 
+meh - j : yabai -m window --warp south
 meh - k : yabai -m window --warp north
 
 # displays
