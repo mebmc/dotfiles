@@ -22,6 +22,8 @@ export LC_BASH_MODE="vim"
 export EDITOR="nvim"
 export PAGER="bat --style=plain"
 
+export ZK_NOTEBOOK_DIR="$HOME/git/notes"
+
 # Secrets
 
 export SOPS_AGE_KEY_FILE="$XDG_CONFIG_HOME/sops/personal.agekey"
@@ -55,11 +57,6 @@ if [[ -d "$HOME/.modular" ]]; then
   export MODULAR_HOME="$HOME/.modular"
   export PATH="$HOME/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
 fi
-
-# Node
-
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Extra
 
