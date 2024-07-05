@@ -109,13 +109,13 @@ yabai -m rule --add app="^Microsoft Outlook$" title="Reminder$" manage=off
 yabai -m rule --add app="^NordVPN$" manage=off   # NordVPN
 yabai -m rule --add app="^Notes$" manage=off   # Apple Notes
 yabai -m rule --add app="^Signal$" manage=off   # Signal
-yabai -m rule --add app="^System Information$" manage=off 
-yabai -m rule --add app="^System Preferences$" manage=off 
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^WhatsApp$" manage=off   # WhatsApp
 yabai -m rule --add app='^Finder$' manage=off sticky=off
-yabai -m rule --add app='^System Settings$' manage=off sticky=on 
+yabai -m rule --add app='^System Settings$' manage=off sticky=on
 yabai -m rule --add title="^Accounts.*" manage=off   # MacOS Mail accounts
-yabai -m rule --add title="^Digital Colour Meter$" manage=off 
+yabai -m rule --add title="^Digital Colour Meter$" manage=off
 yabai -m rule --add title="^Disk Utility$" manage=off   # MacOS Disk utility
 yabai -m rule --add title="^General.*" manage=off   # Calendar settings
 yabai -m rule --add title="^Preferences$" manage=off
