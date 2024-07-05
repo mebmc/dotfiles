@@ -9,6 +9,7 @@ fi
 # Setup homebrew path
 if [[ -d "/opt/homebrew/bin" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    export HOMEBREW_NO_AUTO_UPDATE="true"
 fi
 
 # Set the directory for zinit and plugins
@@ -97,6 +98,32 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 setopt hist_reduce_blanks
+
+# 1password
+function _set_1password_agent() {
+  if [[ -d "$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/" ]]; then
+    export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  elif [[ -d "$HOME/.1password/" ]]; then
+    export SSH_AUTH_SOCK="$HOME/.1password/agent.sock"
+  elif [[ -d "/mnt/c/Windows/System32/OpenSSH/" ]]; then
+    # TODO: Improve Windows WSL support
+    # alias ssh="/mnt/c/Windows/System32/OpenSSH/ssh.exe"
+    # alias ssh-add="/mnt/c/Windows/System32/OpenSSH/ssh-add.exe"
+  else
+    echo "Failed to find 1password SSH"
+  fi
+}
+
+function _load_op_plugins(){
+  if ((${+commands[op]})) && [[ ! -e "$OP_PLUGIN_ALIASES_SOURCED" ]]; then
+    . ~/.config/op/plugins.sh
+  fi
+}
+
+if [[ -z "${SSH_CLIENT}" ]]; then
+  _set_1password_agent
+fi
+_load_op_plugins
 
 # Completion settings
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
