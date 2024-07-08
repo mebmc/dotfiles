@@ -220,6 +220,12 @@ alias lc='ll -schanged'       # Long format, newest status change (ctime) last
 
 alias tree="exa --icons --tree --level 3"
 
+# go-task
+
+if ! hash task 2>/dev/null; then
+  alias task="go-task"
+fi
+
 # Network aliases
 alias wifi="nmtui"
 
