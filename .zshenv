@@ -47,6 +47,10 @@ export FZF_DEFAULT_OPTS=" \
 export ANSIBLE_DIFF_ALWAYS=true
 export ANSIBLE_FORCE_COLOR=true
 
+# Docker
+
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+
 # NodeJS
 
 export NODE_OPTIONS="--max-old-space-size=12288"
