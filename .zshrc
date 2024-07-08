@@ -133,6 +133,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Shell interations
 eval "$(mise activate zsh)"
+eval "$(direnv hook zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
 
