@@ -6,20 +6,22 @@ system_type=$(uname -s)
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME" || exit
 
+echo "Init submodules"
+yadm submodule update --recursive --init
+
 # Set git ignores for the yadm repo
 cat "$HOME/.config/yadm/git_ignore" > "$HOME/.local/share/yadm/repo.git/info/exclude"
 
-echo "Init submodules"
-yadm submodule update --recursive --init
+echo "Updating the yadm repo origin URL"
+yadm remote set-url origin "git@github.com:mebmc/dotfiles-private.git"
+
+echo "Adding the public yadm repo as a remote"
+yadm remote add public git@github.com:mebmc/dotfiles.git
 
 if [ -f "$HOME/.terminfo/custom.terminfo" ]; then
   echo "Updating terminfo"
   tic "$HOME/.terminfo/custom.terminfo"
 fi
-
-echo "Updating the yadm repo origin URL"
-yadm remote set-url origin "git@github.com:mebmc/dotfiles-private.git"
-
 
 # Install homebrew packages on macOS
 if [ "$system_type" = "Darwin" ]; then
