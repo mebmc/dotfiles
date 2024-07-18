@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ -f /usr/bin/task ]]; then
+  /usr/bin/task "$@"
+elif [[ -f /usr/bin/go-task ]]; then
+  /usr/bin/go-task "$@"
+else
+  echo "go-task is not installed"
+  exit 1
+fi

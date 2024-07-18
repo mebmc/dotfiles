@@ -1,0 +1,168 @@
+#!/usr/bin/env bash
+
+set -uo pipefail
+
+# Update pacman database
+sudo pacman -Sy
+
+# Install base packages
+sudo pacman -S \
+    base \
+    base-devel \
+    efibootmgr \
+    git \
+    grub \
+    intel-ucode \
+    linux \
+    linux-firmware \
+    lvm2 \
+    openssh \
+    pacman-contrib \
+    sudo \
+    && true
+
+sudo pacman -S \
+    alsa-utils \
+    blueman \
+    brightnessctl \
+    ddcutil \
+    flatpak-xdg-utils \
+    gammastep \
+    hypridle \
+    hyprland \
+    hyprlock-git \
+    hyprpaper \
+    hyprshot \
+    mako \
+    network-manager-applet \
+    networkmanager \
+    networkmanager-l2tp \
+    networkmanager-openconnect \
+    networkmanager-openvpn \
+    networkmanager-pptp \
+    networkmanager-strongswan \
+    networkmanager-vpnc \
+    polkit-kde-agent \
+    qt5-wayland \
+    sddm \
+    swaync \
+    thunar \
+    thunar-dropbox \
+    waybar \
+    wl-clipboard \
+    wofi \
+    xdg-desktop-portal-gnome \
+    xdg-desktop-portal-gtk \
+    xdg-desktop-portal-hyprland \
+    xdg-desktop-portal-wlr \
+    xdg-user-dirs \
+    && true
+
+sudo pacman -S \
+    archlinux-xdg-menu \
+    aylurs-gtk-shell \
+    espeakup \
+    fwupd \
+    gd \
+    gufw \
+    libratbag \
+    libxcrypt-compat \
+    oniguruma \
+    opensnitch \
+    pamixer \
+    pavucontrol \
+    pipewire-alsa \
+    pirewire-pulse \
+    postgresql-libs \
+    pwru \
+    qemu-full \
+    re2c \
+    speech-dispatcher \
+    virt-manager \
+    && true
+
+# Install shell packages
+sudo pacman -S \
+    alacritty \
+    atuin \
+    bat \
+    bat-extra \
+    direnv \
+    eza \
+    fastfetch \
+    fd \
+    fzf \
+    go-delta \
+    go-task \
+    htop \
+    less \
+    lsof \
+    man-db \
+    man-pages \
+    mise \
+    neofetch \
+    neovim \
+    pet-bin \
+    plocate \
+    tmux \
+    unzip \
+    vi \
+    wget \
+    yadm \
+    zip \
+    zoxide \
+    zsh \
+    && true
+
+# Install devops packages
+sudo pacman -S \
+    buildah \
+    distrobox \
+    dive \
+    docker \
+    docker-credential-pass \
+    docker-rootless-extras \
+    docker-scan \
+    fuse-overlayfs \
+    k9s \
+    kubectl \
+    nerdctl \
+    podman \
+    podman-compose \
+    toolbox \
+    && true
+
+# Install debugging packages
+sudo pacman -S \
+    bcc-tools \
+    bpf \
+    bpftop \
+    bpftrace \
+    ltrace \
+    strace \
+    && true
+
+# Install extra packages
+sudo pacman -S \
+    firefox \
+    tailscale \
+    telegram-desktop \
+    vlc \
+    wayvnc \
+    && true
+
+sudo pacman -S \
+    noto-fonts \
+    noto-fonts-cjk \
+    noto-fonts-emoji \
+    noto-fonts-extra \
+    otf-opendyslexic-nerd \
+    ttf-fira-code-nerd \
+    ttf-hack-nerd \
+    ttf-nerd-fonts-symbols \
+    ttf-nerd-fonts-symbols-mono \
+    ttf-noto-nerd \
+    ttf-roboto-mono-nerd \
+    ttf-ubuntu-mono-nerd \
+    ttf-ubuntu-nerd \
+    && true
