@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -uo pipefail
+
+echo "Exporting excludes to .config/yadm/git_ignore..."
+cat .local/share/yadm/repo.git/info/exclude > .config/yadm/git_ignore
