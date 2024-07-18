@@ -40,6 +40,7 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::direnv
 zinit snippet OMZP::vi-mode
 zinit snippet OMZP::command-not-found
+zinit snippet OMZP::gpg-agent
 
 zinit load 'zsh-users/zsh-history-substring-search'
 zinit ice wait atload'_history_substring_search_config'
