@@ -6,6 +6,8 @@
     path = ~/.gitconfig_work
 [includeIf "gitdir:~/.local/share/yadm/repo.git"]
     path = ~/.gitconfig_personal
+[includeIf "gitdir:~/.password-store/.git"]
+    path = ~/.gitconfig_personal
 [includeIf "gitdir:~/.config/"]
     path = ~/.gitconfig_personal
 [includeIf "gitdir:~/.local/"]
@@ -24,6 +26,7 @@
     clone-wt = "!sh $HOME/.scripts/git-clone-worktrees.sh"
     sm = submodule
     wt = worktree
+    cc = commit --allow-empty-message -m \"\"
 [core]
     autocrlf = input
     editor = nvim
