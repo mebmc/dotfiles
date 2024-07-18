@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -uo pipefail
+
+echo "Create new pet snippet:"
+echo
+
+if hash pet 2>/dev/null; then
+  pet new
+else
+  echo "pet is not installed. Please install it first."
+  sleep 10
+fi
+
