@@ -1,6 +1,6 @@
 # Add Nix and Brew to Path
 
-export PATH="$HOME/.nix-profile/bin:/opt/homebrew/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/mnt/c/Windows/System32/OpenSSH:$HOME/.local/bin:$HOME/.scripts:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.npm-packages:$HOME/.ghcup/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/.nix-profile/bin:/opt/homebrew/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/mnt/c/Windows/System32/OpenSSH:$HOME/.local/bin:$HOME/.scripts:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.npm-packages:$HOME/.ghcup/bin:/usr/share/bcc/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Locale
 
@@ -49,11 +49,12 @@ export ANSIBLE_FORCE_COLOR=true
 
 # Docker
 
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+# export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 # NodeJS
 
 export NODE_OPTIONS="--max-old-space-size=12288"
+export NODE_ENV="development"
 
 # Mojo
 
