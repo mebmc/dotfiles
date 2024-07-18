@@ -1,0 +1,49 @@
+[[snippets]]
+  description = "Grep to find IP address"
+  command = "grep -E -o \"([0-9]{1,3}[.]){3}[0-9]{1,3}\""
+  output = ""
+
+[[snippets]]
+  description = "Grep to remove comments from configuration files"
+  command = "grep -vE \"^( ){0,10}($|;|#|//)\""
+  output = ""
+
+[[snippets]]
+  description = "Strace command"
+  command = "strace -vvyyttrfs4096 -p"
+  output = ""
+
+[[snippets]]
+  description = "Strace php processes"
+  command = "strace -vvyyttrfs4096 $(pgrep php | awk '{ print \"-p\",$1 }' | xargs)"
+  output = ""
+
+[[snippets]]
+  description = "List listing ports"
+  command = "lsof -i -nP | grep \"LISTEN\""
+  output = ""
+
+[[snippets]]
+  description = "Debian install editors via apt"
+  command = "apt update && apt install nano vim"
+  output = ""
+
+[[snippets]]
+  description = "Debian install networking commands via apt"
+  command = "apt update && apt install -y iproute2 iputils-ping nmap ncat lsof dnsutils"
+  output = ""
+
+[[snippets]]
+  description = "Debian install ip command via apt"
+  command = "apt update && apt install -y iproute2"
+  output = ""
+
+[[snippets]]
+  description = "Debian install ping command via apt"
+  command = "apt update && apt install -y iputils-ping"
+  output = ""
+
+[[snippets]]
+  description = "Python run file server"
+  command = "python3 -m http.server 8000"
+  output = ""
