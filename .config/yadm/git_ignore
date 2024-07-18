@@ -1,0 +1,58 @@
+*.bak
+*.pem
+*.pub
+.cache/
+.cargo/
+.cert/
+.config/1Password/
+.config/BraveSoftware/
+.config/Code - OSS/
+.config/Code/
+.config/Docker Desktop/
+.config/Moon FM/
+.config/chromium/
+.config/go/telemetry/
+.config/google-chrome-beta/
+.config/google-chrome-unstable/
+.config/google-chrome/
+.config/microsoft-edge-dev/
+.config/vivaldi-snapshot/
+.config/vivaldi/
+.docker/
+.dotnet/
+.dropbox-dist/
+.dropbox/
+.gnupg/
+.gradle/
+.local/share/
+.local/state/
+.mozilla/
+.npm/
+.phpls/
+.pki/
+.ssh/
+.terraform.d/
+.var/
+.vscode-oss/
+.vscode/
+.wget-hsts
+.zsh_history
+.zshenv_private
+AppImages/
+Documents/
+Downloads/
+Dropbox/
+Photos/
+Pictures/
+git/
+go/bin/
+go/pkg/
+snap/
+temp/
+work/
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~

@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+system_type=$(uname -s)
+
+# Because Git submodule commands cannot operate without a work tree, they must
+# be run from within $HOME (assuming this is the root of your dotfiles)
+cd "$HOME" || exit
+
+# Set git ignores for the yadm repo
+cat "$HOME/.config/yadm/git_ignore" > "$HOME/.local/share/yadm/repo.git/info/exclude"
+
+echo "Init submodules"
+yadm submodule update --recursive --init
+
+if [ -f "$HOME/.terminfo/custom.terminfo" ]; then
+  echo "Updating terminfo"
+  tic "$HOME/.terminfo/custom.terminfo"
+fi
+
+echo "Updating the yadm repo origin URL"
+yadm remote set-url origin "git@github.com:mebmc/dotfiles-private.git"
+
+
+# Install homebrew packages on macOS
+if [ "$system_type" = "Darwin" ]; then
+
+  # install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  fi
+
+  if [ -f "$HOME/.Brewfile" ]; then
+    echo "Updating homebrew bundle"
+    brew bundle --global
+  fi
+
+fi
