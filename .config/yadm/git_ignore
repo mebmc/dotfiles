@@ -1,6 +1,7 @@
 *.bak
 *.pem
 *.pub
+.bash_history
 .cache/
 .cargo/
 .cert/
