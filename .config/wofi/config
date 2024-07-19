@@ -1,0 +1,14 @@
+allow_images=true
+insensitive=true
+no_actions=true
+sort_order=default
+gtk_dark=false
+key_up=Ctrl-k
+key_down=Ctrl-j
+key_left=Ctrl-h
+key_right=Ctrl-l
+key_submit=Return
+key_exit=Escape
+key_expand=Tab
+key_copy=Ctrl-c
+single_click=true
