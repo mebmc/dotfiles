@@ -16,6 +16,7 @@
     co = checkout
     br = branch
     ci = commit -v
+    cl = clone
     st = status
     pl = pull
     pu = push
