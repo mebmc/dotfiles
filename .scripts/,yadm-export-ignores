@@ -2,5 +2,11 @@
 
 set -uo pipefail
 
+echo "Showing diff:"
+diff "$HOME/.local/share/yadm/repo.git/info/exclude" "$HOME/.config/yadm/git_ignore"
+
+echo "Sleeping for 5 seconds"
+sleep 5
+
 echo "Exporting excludes to .config/yadm/git_ignore..."
-cat .local/share/yadm/repo.git/info/exclude > .config/yadm/git_ignore
+cat "$HOME/.local/share/yadm/repo.git/info/exclude" > "$HOME/.config/yadm/git_ignore"
