@@ -11,8 +11,17 @@ alias colors="~/.scripts/colors.sh"
 export NVIM_APPNAME="nvim"
 
 alias e='nvim'
-alias et='nvim +":Neotree"'
-alias es='nvim +":Neotree show" +":SessionManager load_current_dir_session"'
+alias et='nvim +":Oil"'
+alias es='nvim +":SessionManager load_current_dir_session"'
+
+function f () {
+  if [[ -z $1 ]]; then
+    nvim +":Oil"
+  else
+    nvim +":Oil $1"
+  fi
+}
+
 alias ve='neovide'
 alias hex="hexyl"
 
