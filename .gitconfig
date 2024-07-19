@@ -50,7 +50,7 @@
     followtags = true
     autoSetupRemote = true
 [status]
-    submoduleSummary = true
+    submoduleSummary = false
 [filter "lfs"]
     process = git-lfs filter-process
     required = true
@@ -93,7 +93,7 @@
 [rerere]
     enabled = true
 [submodule]
-    recurse = true
+    recurse = false
 [transfer]
     fsckobjects = true
 [fetch]
