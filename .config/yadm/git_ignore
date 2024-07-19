@@ -12,22 +12,29 @@
 .config/Docker Desktop/
 .config/Moon FM/
 .config/chromium/
+.config/dconf/user
+.config/gemini_history.json
+.config/github-copilot/
 .config/go/telemetry/
 .config/google-chrome-beta/
 .config/google-chrome-unstable/
 .config/google-chrome/
 .config/microsoft-edge-dev/
+.config/pulse/cookie
+.config/turborepo/telemetry.json
 .config/vivaldi-snapshot/
 .config/vivaldi/
 .docker/
 .dotnet/
 .dropbox-dist/
 .dropbox/
+.gitconfig_*
 .gnupg/
 .gradle/
 .local/share/
 .local/state/
 .mozilla/
+.nix-profile
 .npm/
 .phpls/
 .pki/
@@ -37,6 +44,7 @@
 .vscode-oss/
 .vscode/
 .wget-hsts
+.zcompdump
 .zsh_history
 .zshenv_private
 AppImages/
