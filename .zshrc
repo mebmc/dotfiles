@@ -117,7 +117,9 @@ function _set_1password_agent() {
 
 function _load_op_plugins(){
   if ((${+commands[op]})) && [[ ! -e "$OP_PLUGIN_ALIASES_SOURCED" ]]; then
-    . ~/.config/op/plugins.sh
+    if [[ -f "$HOME/.config/op/plugins.sh" ]]; then
+      . ~/.config/op/plugins.sh
+    fi
   fi
 }
 
