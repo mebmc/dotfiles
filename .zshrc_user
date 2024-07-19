@@ -207,21 +207,16 @@ alias :Q="exit"
 
 ## ls aliases
 
-if hash eza 2>/dev/null; then
-  alias ls='eza --group-directories-first --icons'
-elif hash exa 2>/dev/null; then
-  alias ls='exa --group-directories-first --icons'
-else
-  alias ls='ls --group-directories-first --color=auto'
-fi
+alias ls='ls --color=auto'
 
-alias ll='ls -l --git'        # Long format, git status
-alias l='ll -a'               # Long format, all files
-alias lr='ll -T'              # Long format, recursive as a tree
-alias lx='ll -sextension'     # Long format, sort by extension
-alias lk='ll -ssize'          # Long format, largest file size last
-alias lt='ll -smodified'      # Long format, newest modification time last
-alias lc='ll -schanged'       # Long format, newest status change (ctime) last
+alias l='eza --group-directories-first --icons'               # Long format, all files
+alias ll='l -l --git'        # Long format, git status
+alias la='l -a'              # Long format, all files
+alias lr='l -T'              # Long format, recursive as a tree
+alias lx='l -sextension'     # Long format, sort by extension
+alias lk='l -ssize'          # Long format, largest file size last
+alias lt='l -smodified'      # Long format, newest modification time last
+alias lc='l -schanged'       # Long format, newest status change (ctime) last
 
 alias tree="exa --icons --tree --level 3"
 
