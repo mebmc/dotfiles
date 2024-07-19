@@ -47,3 +47,8 @@
   description = "Python run file server"
   command = "python3 -m http.server 8000"
   output = ""
+
+[[snippets]]
+  description = "Fetch gpg key for sury apt repo"
+  command = "curl -q https://packages.sury.org/apt.gpg | apt-key add -"
+  output = ""
