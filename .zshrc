@@ -127,16 +127,22 @@ fi
 _load_op_plugins
 
 # Completion settings
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color=always $realpath'
+zstyle ':fzf-tab:*' switch-group '<' '>'
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':fzf-tab:*' popup-min-size 50 8
 
 # Shell interations
 eval "$(mise activate zsh)"
 eval "$(direnv hook zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
+eval "$(fzf --zsh)"
 
 # Add zshrc user config
 source ${HOME}/.zshrc_user
