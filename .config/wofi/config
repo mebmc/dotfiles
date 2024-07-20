@@ -9,6 +9,5 @@ key_left=Ctrl-h
 key_right=Ctrl-l
 key_submit=Return
 key_exit=Escape
-key_expand=Tab
 key_copy=Ctrl-c
 single_click=true
