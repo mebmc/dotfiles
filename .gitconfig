@@ -71,7 +71,7 @@
 [delta]
     navigate = true
     light = false
-    side-by-side = true
+    side-by-side = false
 [merge]
     conflictstyle = zdiff3
 [diff]
