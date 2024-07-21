@@ -20,6 +20,7 @@
 .config/google-chrome-unstable/
 .config/google-chrome/
 .config/microsoft-edge-dev/
+.config/obs-studio/
 .config/pulse/cookie
 .config/turborepo/telemetry.json
 .config/vivaldi-snapshot/
@@ -31,6 +32,7 @@
 .gitconfig_*
 .gnupg/
 .gradle/
+.local/logs/
 .local/share/
 .local/state/
 .mozilla/
@@ -41,6 +43,7 @@
 .ssh/
 .terraform.d/
 .var/
+.viminfo
 .vscode-oss/
 .vscode/
 .wget-hsts
@@ -48,6 +51,7 @@
 .zsh_history
 .zshenv_private
 AppImages/
+Calibre Library/
 Documents/
 Downloads/
 Dropbox/
