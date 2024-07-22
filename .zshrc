@@ -110,8 +110,8 @@ function _set_1password_agent() {
     # TODO: Improve Windows WSL support
     # alias ssh="/mnt/c/Windows/System32/OpenSSH/ssh.exe"
     # alias ssh-add="/mnt/c/Windows/System32/OpenSSH/ssh-add.exe"
-  else
-    echo "Failed to find 1password SSH"
+  # else
+  #   echo "Failed to find 1password SSH"
   fi
 }
 
