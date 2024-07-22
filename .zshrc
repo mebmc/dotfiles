@@ -164,11 +164,21 @@ zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':fzf-tab:*' popup-min-size 120 8
 
 # Shell interations
-eval "$(mise activate zsh)"
-eval "$(direnv hook zsh)"
+
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
 eval "$(fzf --zsh)"
+
+if hash mise 2>/dev/null; then
+  eval "$(mise activate zsh)"
+fi
+
+if hash direnv 2>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
+if hash atuin 2>/dev/null; then
+  eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
+fi
 
 # Add zshrc user config
 source ${HOME}/.zshrc_user
