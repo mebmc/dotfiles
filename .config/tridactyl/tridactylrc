@@ -43,6 +43,10 @@ bindurl ^https://feedly.com k js document.activeElement.dispatchEvent(new Keyboa
 " bindurl ^https://feedly.com l js document.activeElement.dispatchEvent(new KeyboardEvent('keydown',{'key':'j', 'shiftKey':true}));
 " bindurl ^https://feedly.com <C-d> js document.activeElement.dispatchEvent(new KeyboardEvent('keyup',{'key':'PageUp'}));
 " bindurl ^https://feedly.com <C-u> js document.activeElement.dispatchEvent(new KeyboardEvent('keyup',{'key':'PageDown'}));
+" bindurl ^https://read.readwise.io <Escape> js document.activeElement.dispatchEvent(new KeyboardEvent('keydown',{'key':'Escape'}));
+" bindurl ^https://read.readwise.io ? js document.activeElement.dispatchEvent(new KeyboardEvent('keydown',{'key':'?'}));
+" bindurl ^https://read.readwise.io j js document.activeElement.dispatchEvent(new KeyboardEvent('keydown',{'key':'j'}));
+" bindurl ^https://read.readwise.io k js document.activeElement.dispatchEvent(new KeyboardEvent('keydown',{'key':'k'}));
 
 " Don't run Tridactyl on some web sites because it doesn't work well, or
 " because the web site has its own keybindings.
