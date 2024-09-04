@@ -20,7 +20,7 @@ export LC_BASH_MODE="vim"
 # Base
 
 export EDITOR="nvim"
-export PAGER="bat --style=plain"
+# export PAGER="bat --style=plain"
 
 export ZK_NOTEBOOK_DIR="$HOME/git/notes"
 
