@@ -2,6 +2,10 @@
 
 export PATH="$HOME/.nix-profile/bin:/opt/homebrew/bin:/opt/homebrew/opt/coreutils/libexec/gnubin:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/mnt/c/Windows/System32/OpenSSH:$HOME/.local/bin:$HOME/.scripts:$HOME/go/bin:$HOME/.cargo/bin:$HOME/.npm-packages:$HOME/.ghcup/bin:/usr/share/bcc/tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
+if [[ -d "/data/data/com.termux/files/usr/bin" ]]; then
+  export PATH="$PATH:/data/data/com.termux/files/usr/bin"
+fi
+
 # Locale
 
 export LANG="en_GB.UTF-8"
