@@ -53,7 +53,16 @@ export ANSIBLE_FORCE_COLOR=true
 
 # Docker
 
+export DOCKER_CLI_HINTS=false
 # export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+
+# Machine Learning
+
+export OLLAMA_HOST="0.0.0.0"
+export OLLAMA_KEEP_ALIVE="30m"
+export OLLAMA_MAX_QUEUE=10
+export OLLAMA_NUM_PARALLEL=2
+export OLLAMA_URL="http://kelso:11434"
 
 # NodeJS
 
