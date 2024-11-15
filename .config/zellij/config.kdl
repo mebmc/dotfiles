@@ -205,7 +205,7 @@ keybinds {
 
         bind "Alt g" { SwitchToMode "Locked"; }
         bind "Ctrl e" { ToggleFloatingPanes; SwitchToMode "Normal"; }
-        bind "Ctrl q" { ToggleFloatingPanes; SwitchToMode "Normal"; }        
+        bind "Ctrl q" { ToggleFloatingPanes; SwitchToMode "Normal"; }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" "q" { SwitchToMode "Normal"; }
