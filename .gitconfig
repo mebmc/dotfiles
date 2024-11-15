@@ -18,6 +18,7 @@
     ci = commit -v
     cl = clone
     st = status
+    sw = switch
     pl = pull
     pu = push
     up = update
@@ -32,7 +33,7 @@
     autocrlf = input
     editor = nvim
     pager = delta
-    excludesFile = ~/.gitignore
+    excludesfile = ~/.gitignore
 [color "diff"]
     whitespace = red reverse
     meta = 11
@@ -64,6 +65,7 @@
 [commit]
     gpgsign = true
     verbose = true
+    template = ~/.stCommitMsg
 [tag]
     gpgsign = true
 [interactive]
