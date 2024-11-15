@@ -1,0 +1,32 @@
+[ui]
+default-command = "log"
+editor = "nvim"
+
+[alias]
+l = ["log", "-r", "@ | ancestors(remote_bookmarks().., 2) | trunk()"]
+bm = ["bookmark"]
+fs = ["file"]
+
+[core]
+fsmonitor="watchman"
+watchman.register_snapshot_trigger = true
+
+[signing]
+sign-all = true
+backend = "ssh"
+key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICugxr8lOf4ssnSZKxfY6J1LPLxk0bMoPyRovcFvi6H6"
+
+[signing.backends.ssh]
+program = "op-ssh-sign"
+allowed-signers = "$HOME/.config/git/allowed_signers"
+
+[user]
+name = "Ben McDonald"
+email = "ben@mebmc.uk"
+
+[git]
+private-commits = "description(glob:'wip:*') | description(glob:'private:*')"
+
+[snapshot]
+# max-new-file-size = 33535132
+max-new-file-size = "64MiB"
