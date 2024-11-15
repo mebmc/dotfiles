@@ -1,10 +1,16 @@
 # ZSH User
 
+# Fix GNU utils on MacOS
+
+if [[ -d "/opt/homebrew/opt/coreutils/libexec/gnubin" ]]; then
+  export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+fi
+
 # Aliases and functions
 
 alias ca="c $HOME/.config/nvim"
 alias cv="c $HOME/.config/astronvim"
-alias colors="~/.scripts/colors.sh"
+# alias colors="~/.scripts/colors.sh"
 
 ## Editor
 
@@ -111,7 +117,7 @@ alias a="ansible"
 alias ap="ansible-playbook"
 alias ansible-vault="ANSIBLE_VERBOSITY=0 ansible-vault"
 alias aw="aws"
-alias j="just"
+alias j="jj"
 alias tf="terraform"
 alias wtf="wrapped-terraform"
 alias tg="terragrunt"
@@ -218,7 +224,7 @@ alias lk='l -ssize'          # Long format, largest file size last
 alias lt='l -smodified'      # Long format, newest modification time last
 alias lc='l -schanged'       # Long format, newest status change (ctime) last
 
-alias tree="exa --icons --tree --level 3"
+alias tree="eza --icons --tree --level 3"
 
 # go-task
 

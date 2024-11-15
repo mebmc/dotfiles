@@ -51,6 +51,10 @@ export FZF_DEFAULT_OPTS=" \
 export ANSIBLE_DIFF_ALWAYS=true
 export ANSIBLE_FORCE_COLOR=true
 
+# Version Control
+
+export JJ_CONFIG="$HOME/.config/jj/config.toml"
+
 # Docker
 
 export DOCKER_CLI_HINTS=false
