@@ -55,11 +55,11 @@ yabai -m config external_bar all:0:0
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  10
-yabai -m config bottom_padding               10
-yabai -m config left_padding                 10
-yabai -m config right_padding                10
-yabai -m config window_gap                   10
+yabai -m config top_padding                  5
+yabai -m config bottom_padding               5
+yabai -m config left_padding                 5
+yabai -m config right_padding                5
+yabai -m config window_gap                   5
 
 # label spaces
 yabai -m space 1 --label 1
@@ -80,23 +80,24 @@ yabai -m space 15 --label 15
 
 # window rules
 
-yabai -m rule --add app="^1Password$" manage=off space=1
+# yabai -m rule --add app="^1Password$" manage=off space=1
+# yabai -m rule --add app="^1Password$" title="^Quick Access — 1Password$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Alacritty$" manage=on
-yabai -m rule --add app="^Calendar$" --title="^Calendar$" manage=on space=4
+# yabai -m rule --add app="^Calendar$" --title="^Calendar$" manage=on space=4
 yabai -m rule --add app="^Discord$" manage=on space=8
 yabai -m rule --add app="^Docker Desktop$" manage=off
-yabai -m rule --add app="^Firefox Developer Edition$" manage=on space=2
+# yabai -m rule --add app="^Firefox Developer Edition$" manage=on space=2
 yabai -m rule --add app="^Firefox$" manage=on
 yabai -m rule --add app="^Firefox$" title="^Extension.*" manage=off
-yabai -m rule --add app="^Microsoft Outlook$" manage=on space=4
+# yabai -m rule --add app="^Microsoft Outlook$" manage=on space=4
 yabai -m rule --add app="^Microsoft Remote Desktop$" manage=off
-yabai -m rule --add app="^Microsoft Teams$" title="^(Teams and Channels|Chat) |.*$" manage=on space=3
+# yabai -m rule --add app="^Microsoft Teams$" title="^(Teams and Channels|Chat) |.*$" manage=on space=3
 yabai -m rule --add app="^OpenIn$" manage=off
 yabai -m rule --add app="^Raycast$" manage=off
-yabai -m rule --add app="^Spotify$" manage=on space=6
-yabai -m rule --add app="^Steam Helper$" title="^Special Offers$" manage=off space=9
-yabai -m rule --add app="^Steam Helper$" title="^Steam$" manage=on space=9
+# yabai -m rule --add app="^Spotify$" manage=on space=6
+# yabai -m rule --add app="^Steam Helper$" title="^Special Offers$" manage=off space=9
+# yabai -m rule --add app="^Steam Helper$" title="^Steam$" manage=on space=9
 yabai -m rule --add app="^Telegram$" manage=on space=7
 yabai -m rule --add app="^Unity$" title="^Tutorials$" manage-off
 yabai -m rule --add app="^kitty$" manage=on space=1
