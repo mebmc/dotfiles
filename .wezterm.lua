@@ -32,21 +32,21 @@ config = {
   color_scheme = 'Brogrammer',
 
   font = wezterm.font 'FiraCode Nerd Font',
-  font_size = 16,
+  font_size = 14,
   hide_tab_bar_if_only_one_tab = true,
 
   window_decorations = "RESIZE",
   window_padding = {
-    left = 5,
+    left = 0,
     right = 0,
-    top = 5,
+    top = 2,
     bottom = 0
   },
 
   window_background_image = wezterm.home_dir .. '/.share/backgrounds/pexels-jacob-lister-haugen-18249971.jpg',
   -- window_background_image = wezterm.home_dir .. '/test.jpg',
   window_background_image_hsb = {
-    brightness = 0.05,
+    brightness = 0.005,
     hue = 1.0,
     saturation = 1.0,
   },
