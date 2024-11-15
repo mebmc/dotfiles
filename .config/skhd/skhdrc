@@ -116,7 +116,8 @@
 #    "qutebrowser"
 # ]
 
-# hyper - t : open -na /Applications/Alacritty.app
+alt + lctrl + cmd - w : open -na /Applications/WezTerm.app
+alt + lctrl + cmd - e : open ~
 # hyper - s : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Safari")) | .[0].id')
 # hyper - d : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Alacritty")) | .[0].id')
 # hyper - f : yabai -m window --focus $(yabai -m query --windows | jq 'map(select(.app=="Firefox")) | .[0].id')
@@ -131,6 +132,34 @@ ctrl - u [
 ctrl - d [
         "Fiery Feeds" : skhd -k 'pagedown'
 ]
+
+ctrl - a : * : skhd -k "cmd - a"
+
+ctrl - v [
+    "microsoft excel" : skhd -k "cmd + ctrl - v"
+    "microsoft outlook" : skhd -k "cmd + alt + shift - v"
+    "microsoft powerpoint" : skhd -k "cmd + ctrl - v"
+    "microsoft teams" : skhd -k "cmd + alt + shift - v"
+    "microsoft word" : skhd -k "cmd + ctrl - v"
+    * : skhd -k "cmd - v"
+]
+
+ctrl - c [
+    "brave" : skhd -k "cmd - c"
+    "firefox" : skhd -k "cmd - c"
+    "microsoft excel" : skhd -k "cmd - c"
+    "microsoft outlook" : skhd -k "cmd - c"
+    "microsoft powerpoint" : skhd -k "cmd - c"
+    "microsoft teams" : skhd -k "cmd - c"
+    "microsoft word" : skhd -k "cmd - c"
+    # * : skhd -k "cmd - c"
+]
+
+# close window
+alt + lctrl + cmd - q : skhd -k "cmd - w"
+
+# lock screen
+meh - q : skhd -k "cmd + ctrl - q"
 
 
 # focus window
