@@ -4,8 +4,11 @@ editor = "nvim"
 
 [alias]
 l = ["log", "-r", "@ | ancestors(remote_bookmarks().., 2) | trunk()"]
+la = ["log", "-r", "all()"]
 bm = ["bookmark"]
 fs = ["file"]
+sw = ["edit"]
+up = ["git", "fetch"]
 
 [core]
 fsmonitor="watchman"
@@ -20,13 +23,12 @@ key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICugxr8lOf4ssnSZKxfY6J1LPLxk0bMoPyRov
 program = "op-ssh-sign"
 allowed-signers = "$HOME/.config/git/allowed_signers"
 
-[user]
-name = "Ben McDonald"
-email = "ben@mebmc.uk"
-
 [git]
 private-commits = "description(glob:'wip:*') | description(glob:'private:*')"
 
 [snapshot]
-# max-new-file-size = 33535132
 max-new-file-size = "64MiB"
+
+[user]
+name = ""
+email = ""

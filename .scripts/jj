@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+FOLDER=$(realpath -m --relative-to="$HOME" "$PWD" | awk -F/ '{ print $1 }')
+
+if [ "${FOLDER}" == "work" ]; then
+    JJ_CONFIG="$HOME/.config/jj/work.toml" jj "$@"
+elif [ "${FOLDER}" == "git" ]; then
+    JJ_CONFIG="$HOME/.config/jj/personal.toml" jj "$@"
+elif [ "${FOLDER}" == "scripts" ]; then
+    JJ_CONFIG="$HOME/.config/jj/personal.toml" jj "$@"
+else
+    jj "$@"
+fi
