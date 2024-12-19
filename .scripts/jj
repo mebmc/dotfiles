@@ -6,6 +6,8 @@ if [ "${FOLDER}" == "work" ]; then
     JJ_CONFIG="$HOME/.config/jj/work.toml" jj "$@"
 elif [ "${FOLDER}" == "git" ]; then
     JJ_CONFIG="$HOME/.config/jj/personal.toml" jj "$@"
+elif [ "${FOLDER}" == ".config" ]; then
+    JJ_CONFIG="$HOME/.config/jj/personal.toml" jj "$@"
 elif [ "${FOLDER}" == "scripts" ]; then
     JJ_CONFIG="$HOME/.config/jj/personal.toml" jj "$@"
 else
