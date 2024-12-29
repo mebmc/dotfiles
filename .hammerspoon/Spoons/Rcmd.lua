@@ -16,46 +16,24 @@ end
 
 local LeftRightHotkey = require("spoons/LeftRightHotkey")
 
-LeftRightHotkey.bind({ "rCmd" }, "f", function()
-    activateApp("Firefox")
-end)
+local shortcuts = {
+    { key = "a", app = "Claude" },
+    { key = "s", app = "Code" },
+    { key = "d", app = "WezTerm" },
+    { key = "f", app = "Firefox" },
+    { key = "g", app = "Microsoft Teams" },
+    { key = "h", app = "Microsoft Outlook" },
+    { key = "j", app = "Zen Browser" },
+    { key = "k", app = "Unity Hub" },
+    { key = "l", app = "Spotify" },
+    { key = ";", app = "Telegram" },
+    { key = "x", app = "Calendar" },
+    { key = "p", app = "Google Chrome" },
+    { key = "z", app = "Discord" },
+}
 
-LeftRightHotkey.bind({ "rCmd" }, "d", function()
-    activateApp("WezTerm")
-end)
-
-LeftRightHotkey.bind({ "rCmd" }, "s", function()
-    activateApp("Claude")
-end)
-
-LeftRightHotkey.bind({ "rCmd" }, "a", function()
-    activateApp("Calendar")
-end)
-
-LeftRightHotkey.bind({ "rCmd" }, "c", function()
-    activateApp("Microsoft Teams")
-end)
-
-LeftRightHotkey.bind({ "rCmd" }, "o", function()
-    activateApp("Microsoft Outlook")
-end)
-
-LeftRightHotkey.bind({ "rCmd" }, "p", function()
-    activateApp("Google Chrome")
-end)
-
-LeftRightHotkey.bind({ "rCmd" }, "z", function()
-    activateApp("Discord")
-end)
-
-LeftRightHotkey.bind({ "rCmd" }, "g", function()
-    activateApp("Spotify")
-end)
-
-LeftRightHotkey.bind({ "rCmd" }, "t", function()
-    activateApp("Telegram")
-end)
-
-LeftRightHotkey.bind({ "rCmd" }, "b", function()
-    activateApp("Zen Browser")
-end)
+for _, shortcut in ipairs(shortcuts) do
+    LeftRightHotkey.bind({ "rCmd" }, shortcut.key, function()
+        activateApp(shortcut.app)
+    end)
+end

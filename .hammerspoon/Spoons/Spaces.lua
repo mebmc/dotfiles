@@ -1,87 +1,95 @@
 -- Function to move an application window to a specific space
-local function moveAppToSpace(appName, spaceNumber)
-    local app = hs.application.find(appName)
-    if app then
-        local win = app:mainWindow()
-        if win then
-            -- Get all spaces
-            local spaces = hs.spaces.allSpaces()
-            -- Find the target space ID for the desired space number
-            local targetSpaceID = nil
-            for screenID, spaceIDs in pairs(spaces) do
-                if spaceNumber <= #spaceIDs then
-                    targetSpaceID = spaceIDs[spaceNumber]
-                    break
-                end
-            end
 
-            if targetSpaceID then
-                -- Move the window to the target space
-                hs.spaces.moveWindowToSpace(win, targetSpaceID)
-                -- Focus the window on the new space
-                win:focus()
-            end
-        end
-    end
-end
+local log = hs.logger.new('Spaces', 'debug')
+log.i("Spaces start")
 
--- Function to watch for Teams and Outlook windows and move them
-local function handleAppWindow(appName, event, app)
-    if event == hs.application.watcher.launched then
-        if appName == "Microsoft Teams" then
-            -- Wait a bit for the window to fully load
-            hs.timer.doAfter(2, function()
-                moveAppToSpace("Microsoft Teams", 3)
-            end)
-        elseif appName == "Microsoft Outlook" then
-            -- Wait a bit for the window to fully load
-            hs.timer.doAfter(2, function()
-                moveAppToSpace("Microsoft Outlook", 4)
-            end)
-        elseif appName == "Spotify" then
-            -- Wait a bit for the window to fully load
-            hs.timer.doAfter(2, function()
-                moveAppToSpace("Spotify", 5)
-            end)
-        elseif appName == "Discord" then
-            -- Wait a bit for the window to fully load
-            hs.timer.doAfter(8, function()
-                moveAppToSpace("Discord", 7)
-            end)
-        elseif appName == "Telegram" then
-            -- Wait a bit for the window to fully load
-            hs.timer.doAfter(2, function()
-                moveAppToSpace("Telegram", 7)
-            end)
-        elseif appName == "Zen Browser" then
-            -- Wait a bit for the window to fully load
-            hs.timer.doAfter(2, function()
-                moveAppToSpace("Zen Browser", 9)
-            end)
-        elseif appName == "Brave" then
-            -- Wait a bit for the window to fully load
-            hs.timer.doAfter(2, function()
-                moveAppToSpace("Brave", 9)
-            end)
-        end
-    end
-end
+local app = hs.application.find("Claude")
+local win = app:mainWindow()
+local result = hs.spaces.moveWindowToSpace(win, 1, true)
+hs.alert.show("Moved " .. app:name() .. " to space " .. 1)
 
--- Create and start the application watcher
-local appWatcher = hs.application.watcher.new(handleAppWindow)
-appWatcher:start()
+local appTargets = {
+    ["Claude"] = 1,
+    ["Code"] = 2,
+    ["WezTerm"] = 3,
+    ["Firefox"] = 4,
+    ["Microsoft Teams"] = 5,
+    ["Microsoft Outlook"] = 6,
+    ["Unity Hub"] = 7,
+    ["Spotify"] = 8,
+    ["Zen Browser"] = 9,
+    ["Discord"] = 10,
+    ["Telegram"] = 10,
+    ["Brave"] = 11
+}
 
--- Initial placement for already-running applications
+-- local function moveAppToSpace(appName, spaceNumber)
+--     local app = hs.application.find(appName)
+--     -- log.i(app)
+--     if app then
+--         local win = app:mainWindow()
+--         if win then
+--             -- Get all spaces
+--             local spaces = hs.spaces.allSpaces()
+--             -- Get the primary screen's ID (first screen)
+--             local primaryScreen = hs.screen.primaryScreen():getUUID()
+--             local targetSpaceID = nil
+
+--             -- Use primary screen's spaces
+--             if spaces[primaryScreen] and spaceNumber <= #spaces[primaryScreen] then
+--                 targetSpaceID = spaces[primaryScreen][spaceNumber]
+--             end
+
+--             if targetSpaceID then
+--                 -- Move the window to the target space
+--                 -- hs.alert.show("Moving " .. appName .. " to space " .. spaceNumber)
+--                 log.i("Moving " .. appName .. " to space " .. spaceNumber)
+--                 out = hs.spaces.moveWindowToSpace(win, targetSpaceID, true)
+--                 if out ~= true then
+--                     log.i("Failed" .. out)
+--                 end
+--                 -- win:focus()
+--             else
+--                 hs.alert.show("Unable to find target space " .. spaceNumber)
+--             end
+--         else
+--             hs.alert.show("No window found for " .. appName)
+--         end
+--     else
+--         hs.alert.show("Application not found: " .. appName)
+--     end
+-- end
+
+-- -- Function to watch for application windows and move them
+-- local function handleAppWindow(appName, event, app)
+--     if event == hs.application.watcher.launched then
+--         hs.alert.show(appName)
+
+--         local targetSpace = appTargets[appName]
+--         if targetSpace then
+--             -- Special case for Discord which needs more time to load
+--             -- local waitTime = appName == "Discord" and 8 or 2
+--             local waitTime = 2
+
+--             -- Wait for the window to fully load
+--             hs.timer.doAfter(waitTime, function()
+--                 moveAppToSpace(appName, targetSpace)
+--             end)
+--         end
+--     end
+-- end
+
+-- -- Create and start the application watcher
+-- local appWatcher = hs.application.watcher.new(handleAppWindow)
+-- appWatcher:start()
+
+-- -- Initial placement for already-running applications
 -- hs.timer.doAfter(1, function()
---     moveAppToSpace("Microsoft Teams", 3)
---     moveAppToSpace("Microsoft Outlook", 4)
---     moveAppToSpace("Spotify", 5)
---     moveAppToSpace("Discord", 7)
---     moveAppToSpace("Telegram", 7)
---     moveAppToSpace("Zen Browser", 9)
---     moveAppToSpace("Brave", 9)
+--     for appName, spaceNumber in pairs(appTargets) do
+--         moveAppToSpace(appName, spaceNumber)
+--     end
 -- end)
---
--- hs.timer.doAfter(5, function()
---     hs.spaces.gotoSpace(1)
--- end)
+
+-- -- hs.timer.doAfter(5, function()
+-- --     hs.spaces.gotoSpace(1)
+-- -- end)
