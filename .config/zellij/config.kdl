@@ -169,6 +169,16 @@ keybinds {
                 close_on_exit true;
             };
         }
+        // bind "Ctrl f" {
+        //     SwitchToMode "Normal";
+        //     LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij-sessionizer.wasm" {
+        //         floating true
+        //         move_to_focused_tab true
+        //         cwd "/"
+        //         root_dirs "~/git"
+        //         session_layout ":default"
+        //     };
+        // }
         bind "Ctrl f" {
             SwitchToMode "Normal";
             Run "zellij" "run" "--floating" "--close-on-exit" "--" "zellij-sessionizer" {

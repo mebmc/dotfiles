@@ -32,8 +32,10 @@ config = {
   color_scheme = 'Brogrammer',
 
   font = wezterm.font 'FiraCode Nerd Font',
-  font_size = 14,
+  font_size = 18,
   hide_tab_bar_if_only_one_tab = true,
+
+  -- default_prog = { '/usr/bin/env', 'zellij', '-l', 'welcome' },
 
   window_decorations = "RESIZE",
   window_padding = {
