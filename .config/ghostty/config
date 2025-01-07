@@ -4,3 +4,4 @@ window-save-state = always
 confirm-close-surface = false
 copy-on-select = true
 term = xterm-256color
+font-family = "FiraCode Nerd Font"
