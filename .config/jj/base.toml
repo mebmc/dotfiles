@@ -13,7 +13,7 @@ merge-tool-edits-conflict-markers = true
 program = "delta"
 edit-args = ["$left", "$right"]
 
-[alias]
+[aliases]
 adv = ["bookmark", "move", "--to", "@-"]
 auto = ["utils", ""]
 roll = ["bookmark", "move", "--to", "@-"]
