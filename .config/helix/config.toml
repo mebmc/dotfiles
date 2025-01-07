@@ -14,3 +14,12 @@ select = "underline"
 
 [editor.file-picker]
 hidden = true
+
+[keys.insert]
+"A-x" = "normal_mode"     # Maps Alt-X to enter normal mode
+j = { k = "normal_mode" } # Maps `jk` to exit insert mode
+
+[keys.space]
+w = { w = ":write", q = [":write", ":quit"]}
+
+q = {q = ":quit", Q = ":quit!" }
