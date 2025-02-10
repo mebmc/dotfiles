@@ -2,7 +2,6 @@
 NODE_ENV = "production"
 
 [tools]
-ansible-base = "2.10.17"
 bun = "latest"
 consul = "1.14.3"
 direnv = "2.32.2"
