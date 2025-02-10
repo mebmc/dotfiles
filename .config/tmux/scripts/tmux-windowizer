@@ -21,4 +21,5 @@ if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     exit 0
 fi
 
+zoxide add -- "$selected"
 tmux new-window -c "$selected"
