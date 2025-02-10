@@ -19,8 +19,8 @@ local LeftRightHotkey = require("spoons/LeftRightHotkey")
 local shortcuts = {
     { key = "a", app = "Claude" },
     { key = "s", app = "Code" },
-    { key = "d", app = "Ghostty" },
-    { key = "f", app = "Firefox" },
+    { key = "d", app = "Firefox" },
+    { key = "f", app = "Ghostty" },
     { key = "g", app = "Microsoft Teams" },
     { key = "h", app = "Microsoft Outlook" },
     { key = "j", app = "Unity Hub" },
