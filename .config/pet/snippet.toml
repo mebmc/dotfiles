@@ -52,3 +52,8 @@
   description = "Fetch gpg key for sury apt repo"
   command = "curl -q https://packages.sury.org/apt.gpg | apt-key add -"
   output = ""
+
+[[snippets]]
+  description = "MySQL drop all tables"
+  command = "( echo 'SET FOREIGN_KEY_CHECKS=0;'; mysqldump --add-drop-table --no-data DBNAME | grep 'DROP TABLE'; echo 'SET FOREIGN_KEY_CHECKS=1;'; ) > /root/drop_all_tables.sql"
+  output = ""
