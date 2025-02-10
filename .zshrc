@@ -165,7 +165,6 @@ zstyle ':fzf-tab:*' popup-min-size 120 8
 
 # Shell interations
 
-eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
 
 if hash mise 2>/dev/null; then
@@ -185,3 +184,5 @@ source ${HOME}/.zshrc_user
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+eval "$(zoxide init --cmd cd zsh)"
