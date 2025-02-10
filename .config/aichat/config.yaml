@@ -1,0 +1,24 @@
+# see https://github.com/sigoden/aichat/blob/main/config.example.yaml
+
+model: ollama:deepseek-r1:32b
+clients:
+- type: openai-compatible
+  name: ollama
+  api_base: http://127.0.0.1:11434/v1
+  api_key: TERM
+  models:
+    - name: deepseek-r1:32b
+      max_tokens: 4096
+      temperature: 0.5
+    - name: deepseek-coder-v2:16b
+      max_tokens: 4096
+      temperature: 0.5
+    - name: qwen2.5-coder:32b
+      max_tokens: 4096
+      temperature: 0.5
+    - name: qwen2.5-coder:7b
+      max_tokens: 4096
+      temperature: 0.5
+    - name: llama3.2-vision:11b
+      max_tokens: 4096
+      temperature: 0.5
