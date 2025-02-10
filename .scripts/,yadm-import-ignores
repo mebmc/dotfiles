@@ -5,8 +5,8 @@ set -uo pipefail
 echo "Showing diff:"
 diff  "$HOME/.config/yadm/git_ignore" "$HOME/.local/share/yadm/repo.git/info/exclude"
 
-echo "Sleeping for 5 seconds"
-sleep 5
+echo "Sleeping for 2 seconds"
+sleep 2
 
 echo "Importing excludes to .config/yadm/git_ignore..."
 cat  "$HOME/.config/yadm/git_ignore" > "$HOME/.local/share/yadm/repo.git/info/exclude"

@@ -1,6 +1,11 @@
 *.bak
 *.pem
 *.pub
+.CFUserTextEncoding
+.DS_Store
+.Trash/
+.ansible/
+.aws/
 .bash_history
 .cache/
 .cargo/
@@ -19,6 +24,10 @@
 .config/google-chrome-beta/
 .config/google-chrome-unstable/
 .config/google-chrome/
+.config/jj/personal.toml
+.config/jj/work.toml
+.config/karabiner/automatic_backups/
+.config/libvirt/
 .config/microsoft-edge-dev/
 .config/obs-studio/
 .config/pulse/cookie
@@ -32,14 +41,32 @@
 .gitconfig_*
 .gnupg/
 .gradle/
+.ipython/
+.ipython/profile_default/history.sqlite
+.jupyter/
+.kube/
+.lesshst
+.lima/
+.local/bin/
 .local/logs/
+.local/pipx/
+.local/pipx/logs/
 .local/share/
 .local/state/
+.mitmproxy/
+.mitmproxy/command_history
 .mozilla/
 .nix-profile
 .npm/
+.ollama/
+.ollama/history
+.ollama/models/
 .phpls/
 .pki/
+.private/
+.python_history
+.rustup/
+.rustup/toolchains/
 .ssh/
 .terraform.d/
 .var/
@@ -47,24 +74,31 @@
 .vscode-oss/
 .vscode/
 .wget-hsts
+.zcompcache/
 .zcompdump
 .zsh_history
+.zsh_sessions/
 .zshenv_private
 AppImages/
+Applications/
 Calibre Library/
+Desktop/
 Documents/
 Downloads/
 Dropbox/
 Library/
 Movies/
+Music/
 Photos/
 Pictures/
+Public/
 git/
 go/bin/
 go/pkg/
 snap/
 temp/
 work/
+
 # git ls-files --others --exclude-from=.git/info/exclude
 # Lines that start with '#' are comments.
 # For a project mostly in C, the following would be a good set of
