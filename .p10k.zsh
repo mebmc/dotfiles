@@ -37,6 +37,7 @@
     # vcs                     # git status
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+    vault
     # =========================[ Line #2 ]=========================
     newline                 # \n
     prompt_char             # prompt symbol
@@ -1589,6 +1590,10 @@
   # Type `p10k help segment` for documentation and a more sophisticated example.
   function prompt_example() {
     p10k segment -f 208 -i '⭐' -t 'hello, %n'
+  }
+
+  function prompt_vault() {
+    p10k segment -f 208 -i '🔒' -t "${ANSIBLE_VAULT_PASSWORD_FILE##$HOME/.private/ansible_vault/}" -c "${ANSIBLE_VAULT_PASSWORD_FILE}"
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
