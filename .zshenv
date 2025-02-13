@@ -49,6 +49,7 @@ export FZF_DEFAULT_OPTS=" \
 
 export ANSIBLE_DIFF_ALWAYS=true
 export ANSIBLE_FORCE_COLOR=true
+export ANSIBLE_VAULT_PASSWORD_FILE="$HOME/.private/ansible_vault/default"
 
 # Version Control
 
