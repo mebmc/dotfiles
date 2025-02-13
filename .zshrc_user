@@ -114,6 +114,7 @@ alias zt="zellij action new-tab"
 ## DevOps
 
 alias a="ansible"
+alias v="ansible-vault edit"
 alias ap="ansible-playbook"
 alias ansible-vault="ANSIBLE_VERBOSITY=0 ansible-vault"
 alias aw="aws"
@@ -143,6 +144,18 @@ function profile () {
       export AWS_PROFILE="$SELECTED_PROFILE"
     else
       unset AWS_PROFILE
+    fi
+  fi
+}
+
+alias clear-vault="unset ANSIBLE_VAULT_PASSWORD_FILE"
+function vault () {
+  SELECTED_VAULT=$( ( find ~/.private/ansible_vault -type f && echo "[clear]" ) | fzf --prompt="Select Ansible vault: " --height="30%" --query="$1" --select-1 )
+  if [[ "$SELECTED_VAULT" != "" ]]; then
+    if [[ "$SELECTED_VAULT" != '[clear]' ]]; then
+      export ANSIBLE_VAULT_PASSWORD_FILE="$SELECTED_VAULT"
+    else
+      unset ANSIBLE_VAULT_PASSWORD_FILE
     fi
   fi
 }
