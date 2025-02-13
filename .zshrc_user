@@ -131,14 +131,14 @@ alias sso="AWS_PROFILE=work-live aws sso login"
 alias eks="aws eks update-kubeconfig --name"
 
 function worktree () {
-  SELECTED_TREE=$( ( git worktree list | grep -v "\.bare" ) | fzf --prompt="Select Git worktree: " --height="40%" --layout=reverse --query="$1" --select-1 | awk '{print $1}' )
+  SELECTED_TREE=$( ( git worktree list | grep -v "\.bare" ) | fzf --prompt="Select Git worktree: " --height="30%" --layout=reverse --query="$1" --select-1 | awk '{print $1}' )
   cd $SELECTED_TREE
 }
 alias wt="worktree"
 
 alias clear-profile="unset AWS_PROFILE"
 function profile () {
-  SELECTED_PROFILE=$( ( aws configure list-profiles && echo "[clear]" ) | fzf --prompt="Select AWS Profile: " --height="40%" --query="$1" --select-1 )
+  SELECTED_PROFILE=$( ( aws configure list-profiles && echo "[clear]" ) | fzf --prompt="Select AWS Profile: " --height="30%" --query="$1" --select-1 )
   if [[ "$SELECTED_PROFILE" != "" ]]; then
     if [[ "$SELECTED_PROFILE" != '[clear]' ]]; then
       export AWS_PROFILE="$SELECTED_PROFILE"
@@ -161,7 +161,7 @@ function vault () {
 }
 
 function cluster () {
-  SELECTED_CLUSTER=$( kubectl config get-contexts --no-headers -o name | fzf --prompt="Select Kubernetes Cluster: " --height="40%" --query="$1" --select-1 )
+  SELECTED_CLUSTER=$( kubectl config get-contexts --no-headers -o name | fzf --prompt="Select Kubernetes Cluster: " --height="30%" --query="$1" --select-1 )
   if [[ "$SELECTED_CLUSTER" != "" ]]; then
     kubectl config use-context "$SELECTED_CLUSTER"
   fi
